@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 import {Button, SvgIcon } from '@mui/material';
 import styled from 'styled-components';
 import theme from './theme';
-import download_icon from '../assets/download.svg'; 
+import download_icon from '../assets/icons/download.svg'; 
 
 
 const useStyles = makeStyles((theme) => ({

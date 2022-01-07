@@ -17,12 +17,12 @@ import { makeStyles } from '@mui/styles';
 import styled from 'styled-components';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import logo from '../assets/logo.svg';
+import logo from '../assets/logos/logo.svg';
 import theme from '../common/theme';
 import ButtonIcon from '../common/button-icon';
-import download_icon from '../assets/download.svg'; 
-import menu_icon from '../assets/menu.svg'; 
-import close_menu_icon from '../assets/close_menu.svg'; 
+import download_icon from '../assets/icons/download.svg'; 
+import menu_icon from '../assets/icons/menu.svg'; 
+import close_menu_icon from '../assets/icons/close_menu.svg'; 
 import MediaIcons from '../common/media-icons';
 
 function ElevationScroll(props) {

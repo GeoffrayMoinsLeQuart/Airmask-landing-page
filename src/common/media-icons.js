@@ -1,8 +1,8 @@
 import { Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import twitter from '../assets/twitter.svg';
-import discord from '../assets/discord.svg';
-import telegram from '../assets/telegram.svg';
+import twitter from '../assets/logos/twitter.svg';
+import discord from '../assets/logos/discord.svg';
+import telegram from '../assets/logos/telegram.svg';
 
 const useStyles = makeStyles((theme) => ({
   socialContainer: {

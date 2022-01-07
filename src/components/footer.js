@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Button, Link, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logos/logo.svg';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../common/theme';
 import MediaIcons from '../common/media-icons';
