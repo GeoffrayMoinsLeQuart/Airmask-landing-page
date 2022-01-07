@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
 import StyledButtonWithIcon from '../common/button-with-icon';
+import { Typography } from '@mui/material';
 
 const HowItWorks = ({ value }) => {
   const myRef = React.createRef();
@@ -13,12 +14,14 @@ const HowItWorks = ({ value }) => {
     }
   }, [value]);
   return (
-  <div ref={myRef}>
-    How it Works Component 
-    <StyledButtonWithIcon>
-      Download now
-    </StyledButtonWithIcon>
-    </div>);
+    <div ref={myRef}>
+      <Typography variant="h1">How it Works Component</Typography>
+      <Typography variant="h2">How it Works Component</Typography>
+      <Typography variant="h3">How it Works Component</Typography>
+      <Typography variant="h4">How it Works Component</Typography>
+      <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
+    </div>
+  );
 };
 
 export default HowItWorks;
