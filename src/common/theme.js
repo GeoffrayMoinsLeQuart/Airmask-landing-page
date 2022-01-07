@@ -16,10 +16,12 @@ export default createTheme({
     },
     secondary: {
       main: `${AirMaskBlue}`,
+      opacity60: 'rgba(39, 42, 191, 0.6)',
     },
     ternary: {
       main: `${AirMaskBlack}`,
-      opacity10: `${AirMaskBlack + 10}`,
+      opacity10: 'rgba(255, 255, 255, 0.1)',
+      opacity60: 'rgba(255, 255, 255, 0.6)',
     },
   },
   typography: {

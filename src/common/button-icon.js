@@ -2,11 +2,12 @@ import {
   IconButton,
 } from '@mui/material';
 import styled from 'styled-components';
+import theme from './theme';
 
 const StyledButtonIcon = styled(IconButton)`
   margin-left: ${(props) => (props.marginleft ? props.marginleft : 'auto')};
   margin-right: ${(props) => (props.marginright ? props.marginright : 'auto')};
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${theme.palette.ternary.opacity10};
   height: 46px;
   width: 46px;
 `;

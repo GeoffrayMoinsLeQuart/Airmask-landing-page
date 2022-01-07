@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import theme from './theme';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -9,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '0 !important',
     marginRight: '0 !important',
     minWidth: '100% !important',
+    backgroundColor: theme.palette.ternary.main,
     [theme.breakpoints.down('lg')]: {
       minWidth: '100% !important',
       paddingRight: '2.5rem !important',

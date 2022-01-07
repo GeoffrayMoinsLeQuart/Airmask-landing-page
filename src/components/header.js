@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbarMargin: {
-    ...theme.mixins.toolbar,
-    [theme.breakpoints.up('sm')]: { marginBottom: '4.5rem' },
+    [theme.breakpoints.down('sm')]: { marginBottom: '6rem' },
+    [theme.breakpoints.up('sm')]: { marginBottom: '6.5rem' },
     [theme.breakpoints.up('md')]: { marginBottom: '8rem' },
-    [theme.breakpoints.up('lg')]: { marginBottom: '10rem' },
+    [theme.breakpoints.up('lg')]: { marginBottom: '9.625rem' },
     marginBottom: '4rem',
   },
   toolbar: {
@@ -136,14 +136,14 @@ const ButtonDownloadHeader = styled(Button)`
   min-width: 10rem;
   height: 3.75rem;
   margin-left: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${theme.palette.ternary.opacity10};
   color: ${theme.palette.primary.main};
   &:hover {
     background-color: ${theme.palette.primary.main};
     color: ${theme.palette.ternary.main};
   }
   &:focus {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: ${theme.palette.ternary.opacity60};
     color: ${theme.palette.ternary.main};
   }
 `;
@@ -158,9 +158,9 @@ const ButtonDownloadMobile = styled(Button)`
   margin-bottom: 1.5rem;
   min-width: 15rem;
   height: 3.75rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${theme.palette.ternary.opacity10};
   color: ${theme.palette.primary.main};
-  
+
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     background-color: red !important;
   }
@@ -170,7 +170,7 @@ const ButtonDownloadMobile = styled(Button)`
     color: ${theme.palette.ternary.main};
   }
   &:focus {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: ${theme.palette.ternary.opacity60};
     color: ${theme.palette.ternary.main};
   }
 `;
