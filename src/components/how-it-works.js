@@ -2,11 +2,91 @@
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
 import StyledButtonWithIcon from '../common/button-with-icon';
-import { Typography } from '@mui/material';
+import { Typography, Grid, useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import how_it_workLogo from '../assets/illustrations/how_it_work.svg'
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+const useStyles = makeStyles((theme) => ({
+  mainDiv: {
+    zIndex: '1400 !important',
+    paddingTop: '2.8125rem',
+    paddingBottom: '2.8125rem',
+    paddingLeft: '8.75rem',
+    paddingRight: '8.75rem',
+    [theme.breakpoints.down('lg')]: {
+      paddingTop: '2rem',
+      paddingBottom: '2rem',
+      paddingRight: '2.5rem',
+      paddingLeft: '2.5rem',
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '1.25rem',
+      paddingBottom: '1.25rem',
+      paddingRight: '1.25rem',
+      paddingLeft: '1.25rem',
+    },
+  },
+  divContainer: {},
+  gridContainer: {
+    [theme.breakpoints.up('lg')]: {
+      minHeight: '56.25rem !important',
+    },
+  },
+  gridContainerText: {
+    [theme.breakpoints.down('md')]: {},
+  },
+  gridText: {
+    [theme.breakpoints.up('md')]: {
+      marginTop: '3rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+      zIndex: 12,
+    },
+  },
+  gridImage: {
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.75rem',
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '7.75rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      marginTop: '10.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '12.4375rem',
+      paddingRight: '8.75rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+      zIndex: 1,
+      position: 'absolute',
+      left: '0px',
+      top: '0px',
+    },
+  },
+  image: {
+    [theme.breakpoints.down('sm')]: {},
+    [theme.breakpoints.up('sm')]: {},
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '43.75rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      minWidth: '53.75rem',
+    },
+  },
+  elementGridText: {
+    paddingTop: '2rem',
+    paddingBottom: '2rem',
+  },
+}));
 
 const HowItWorks = ({ value }) => {
   const myRef = React.createRef();
   const offsetCalcul = ScrollToELement();
+  const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
     if (value === 0) {
@@ -14,12 +94,72 @@ const HowItWorks = ({ value }) => {
     }
   }, [value]);
   return (
-    <div ref={myRef}>
-      <Typography variant="h1">How it Works Component</Typography>
-      <Typography variant="h2">How it Works Component</Typography>
-      <Typography variant="h3">How it Works Component</Typography>
-      <Typography variant="h4">How it Works Component</Typography>
-      <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
+    <div ref={myRef} className={classes.divContainer}>
+      <Grid
+        container
+        direction={{
+          xs: 'column',
+          sm: 'column',
+          md: 'column',
+          lg: 'row',
+          xl: 'row',
+        }}
+        justifyContent="space-between"
+        className={classes.gridContainer}
+      >
+        <Grid item lg={12} xl={6} xxl={7} className={classes.gridContainerText}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="flex-start"
+            alignItems={{
+              xs: 'center',
+              sm: 'center',
+              md: 'center',
+              lg: 'center',
+              xl: 'flex-start',
+            }}
+            className={classes.gridText}
+          >
+            {matches && (
+              <StyledButtonWithIcon>
+                Never miss an opportunity! 😎
+              </StyledButtonWithIcon>
+            )}
+            <Typography variant="h1" className={classes.elementGridText}>
+              Get airdrops at the speed of light
+            </Typography>
+            <Typography variant="h4" className={classes.elementGridText}>
+              The first version of AirMask is ready to use. Start to earning
+              tokens right now. Come and get it!
+            </Typography>
+            <StyledButtonWithIcon>
+              Download now
+            </StyledButtonWithIcon>
+          </Grid>
+        </Grid>
+        <Grid item lg={12} xl={6} xxl={5}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="flex-start"
+            alignItems={{
+              xs: 'center',
+              sm: 'center',
+              md: 'center',
+              lg: 'center',
+              xl: 'flex-end',
+            }}
+            className={classes.gridImage}
+          >
+            <img
+              alt="how_it_workLogo"
+              src={how_it_workLogo}
+              className={classes.image}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 };
