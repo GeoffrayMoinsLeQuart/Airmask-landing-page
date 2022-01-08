@@ -77,48 +77,28 @@ const HowItWorks = ({ value }) => {
     <div ref={myRef}>
       <Grid
         container
-        direction={{
-          xs: 'column',
-          sm: 'column',
-          md: 'column',
-          lg: 'row',
-          xl: 'row',
-        }}
+        direction="column"
         justifyContent="space-between"
         className={classes.gridContainer}
       >
-        <Grid item lg={12} xl={6} xxl={7} className={classes.gridContainerText}>
+        <Grid item xs={12} className={classes.gridContainerText}>
           <Grid
             container
             direction="column"
             justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-start',
-            }}
+            alignItems="center"
             className={classes.gridText}
           >
-            {matches && (
-              <StyledButtonWithIcon>
-                Never miss an opportunity! 😎
-              </StyledButtonWithIcon>
-            )}
             <Typography variant="h1" className={classes.elementGridText}>
-              Get airdrops at the speed of light
+              How does Airmask work?
             </Typography>
             <Typography variant="h4" className={classes.elementGridText}>
-              The first version of AirMask is ready to use. Start to earning
-              tokens right now. Come and get it!
+              Airmask is a non-custodian wallet that helps you find the best
+              opportunities in the crypto world.
             </Typography>
-            <StyledButtonWithIcon>
-              Download now
-            </StyledButtonWithIcon>
           </Grid>
         </Grid>
-        <Grid item lg={12} xl={6} xxl={5}>
+        {/* <Grid item lg={12} xl={6} xxl={5}>
           <Grid
             container
             direction="column"
@@ -138,7 +118,7 @@ const HowItWorks = ({ value }) => {
               className={classes.image}
             />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
