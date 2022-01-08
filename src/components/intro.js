@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '56.25rem !important',
     },
   },
-  gridContainerText: {
-    [theme.breakpoints.down('md')]: {},
-  },
   gridText: {
     [theme.breakpoints.up('md')]: {
       marginTop: '3rem',
@@ -87,7 +84,7 @@ const Intro = ({ value }) => {
         justifyContent="space-between"
         className={classes.gridContainer}
       >
-        <Grid item lg={12} xl={6} xxl={7} className={classes.gridContainerText}>
+        <Grid item lg={12} xl={6} xxl={7}>
           <Grid
             container
             direction="column"
@@ -113,9 +110,7 @@ const Intro = ({ value }) => {
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>
-            <StyledButtonWithIcon>
-              Download now
-            </StyledButtonWithIcon>
+            <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
           </Grid>
         </Grid>
         <Grid item lg={12} xl={6} xxl={5}>

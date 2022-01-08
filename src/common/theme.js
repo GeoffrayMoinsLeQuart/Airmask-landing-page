@@ -12,7 +12,7 @@ export default createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
-      xxl: 2030
+      xxl: 2030,
     },
   },
   palette: {
@@ -30,6 +30,7 @@ export default createTheme({
     },
     ternary: {
       main: AirMaskBlack,
+      opacity3: 'rgba(255, 255, 255, 0.03)',
       opacity10: 'rgba(255, 255, 255, 0.1)',
       opacity60: 'rgba(255, 255, 255, 0.6)',
     },

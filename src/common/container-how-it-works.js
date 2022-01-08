@@ -4,55 +4,60 @@ import { Typography, Grid } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
-    backgroundColor: 'yellow',
-    // [theme.breakpoints.up('lg')]: {
-    //   marginTop: '12.4375rem',
-    //   paddingRight: '8.75rem',
-    // },
-    // [theme.breakpoints.up('xl')]: {
-    //   zIndex: 1,
-    //   position: 'absolute',
-    //   left: '0px',
-    //   top: '0px',
-    // },
+    width: '100%',
+    '&:nth-child(1)': {
+      [theme.breakpoints.up('xl')]: {
+        paddingRight: '3rem !important',
+      },
+    },
+    '&:nth-child(2)': {
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '3rem !important',
+      },
+    },
   },
   gridText: {
-    backgroundColor: 'red',
+    borderRadius: '2rem',
+    backgroundColor: theme.palette.ternary.opacity3,
+    margin: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      height: '880px !important',
+    },
+    [theme.breakpoints.up('sm')]: {
+      paddingRight: '3rem !important',
+      paddingLeft: '3rem !important',
+      height: '700x !important',
+    },
+    [theme.breakpoints.up('md')]: {
+      height: '950px !important',
+    },
   },
   elementGridText: {
+    border: '4px solid red !important',
     paddingTop: '1rem',
     paddingBottom: '1rem',
-    [theme.breakpoints.down('sm')]: {
-      width: '300px',
-    },
-    [theme.breakpoints.up('sm')]: {
-      width: '500px',
-    },
-    [theme.breakpoints.up('md')]: {
-      width: '700px',
-    },
   },
   image: {
+    borderColor: 'red !important',
     [theme.breakpoints.down('sm')]: {
       width: '300px',
-      height: '300px',
     },
     [theme.breakpoints.up('sm')]: {
-      width: '500px',
-      height: '500px',
+      width: '400px',
+      height: '400px',
     },
     [theme.breakpoints.up('md')]: {
-      width: '700px',
-      height: '700px',
+      maxWidth: '700px',
+      maxHeight: '700px',
     },
   },
 }));
 
-const ContainerHowItWorks = ({ title, subTitle, image }) => {
+const ContainerHowItWorks = ({ title, subTitle, image, optionCSS }) => {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} md={6} className={classes.gridContainerBox}>
+    <Grid item lg={12} xl={6} className={classes.gridContainerBox}>
       <Grid
         container
         direction="column"
