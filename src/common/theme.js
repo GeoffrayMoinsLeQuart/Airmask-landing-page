@@ -5,6 +5,16 @@ const AirMaskBlack = '#201E29';
 const AirMaskBlue = '#272ABF';
 
 export default createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      xxl: 2030
+    },
+  },
   palette: {
     common: {
       white: AirMaskWhite,
@@ -52,11 +62,11 @@ export default createTheme({
     },
     h4: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
-      color: AirMaskWhite,
       textTransform: 'none',
       fontWeight: 500,
       fontSize: '1.125rem',
       lineHeight: '1.6875rem',
+      color: 'rgba(255, 255, 255, 0.6)',
     },
     h5: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),

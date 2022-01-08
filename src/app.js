@@ -4,7 +4,8 @@ import Footer from './components/footer';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './common/theme';
 import StyledContainer from './common/container';
-import HowItWorks from "./components/how-it-works";
+import HowItWorks from './components/how-it-works';
+import Intro from './components/intro';
 import AirmaskInNumber from "./components/airmask-in-number";
 import Team from './components/team';
 import HowToStart from './components/how-to-start';
@@ -18,6 +19,11 @@ const [value, setValue] = useState(0);
     <ThemeProvider theme={theme}>
       <Header value={value} setValue={setValue} />
       <StyledContainer value={value} setValue={setValue}>
+        <Intro value={value} />
+        <br />
+        <br />
+        <br />
+        <br />
         <HowItWorks value={value} />
         <br />
         <br />
@@ -56,9 +62,9 @@ const [value, setValue] = useState(0);
         Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
         Hello HelloHelloHello Hello llo Hello Hello Hello Hello Hello Hello
         Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHelo Hello Hello Hello Hello
-        HelloHelloHello Hello Hello ollo Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
+        Hello HelloHelloHelo Hello Hello Hello Hello HelloHelloHello Hello Hello
+        ollo Hello Hello Hello Hello Hello Hello Hello HelloHelloHello Hello
+        Hello Hello Hello Hello Hello Hello Hello
       </StyledContainer>
       <Footer value={value} setValue={setValue} />
     </ThemeProvider>

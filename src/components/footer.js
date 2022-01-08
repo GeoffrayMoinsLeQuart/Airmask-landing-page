@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Button, Link, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logos/logo.svg';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../common/theme';
 import MediaIcons from '../common/media-icons';
@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = ({setValue}) => {
   const classes = useStyles();
 
+
   const designGrid= {
     xs: 'center',
     sm: 'center',
@@ -77,6 +78,10 @@ const Footer = ({setValue}) => {
         fontSize: '0.75rem',
       },
     };
+
+  const handleClickMenu = () => {
+    setValue('Home');
+  };
 
   const StyledLink = ({ nameLink, value, type }) => {
     return (
@@ -116,6 +121,7 @@ const Footer = ({setValue}) => {
               component={Link}
               disableRipple
               style={{ backgroundColor: 'transparent', padding: 0 }} // no hover style
+              onClick={handleClickMenu}
             >
               <img alt="companylogo" src={logo} className={classes.logo} />
             </Button>

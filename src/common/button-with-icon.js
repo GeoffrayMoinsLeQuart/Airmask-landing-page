@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 import {Button, SvgIcon } from '@mui/material';
 import styled from 'styled-components';
 import theme from './theme';
-import download_icon from '../assets/download.svg'; 
+import download_icon from '../assets/icons/download.svg'; 
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +22,6 @@ const ButtonDownloadHeader = styled(Button)`
   font-size: 1rem;
   min-width: 10rem;
   height: 3.75rem;
-  margin-left: 50px;
   background-color: ${theme.palette.primary.main};
   color: ${theme.palette.secondary.main};
   &:hover {

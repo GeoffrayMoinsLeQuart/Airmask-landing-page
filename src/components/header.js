@@ -17,12 +17,12 @@ import { makeStyles } from '@mui/styles';
 import styled from 'styled-components';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import logo from '../assets/logo.svg';
+import logo from '../assets/logos/logo.svg';
 import theme from '../common/theme';
 import ButtonIcon from '../common/button-icon';
-import download_icon from '../assets/download.svg'; 
-import menu_icon from '../assets/menu.svg'; 
-import close_menu_icon from '../assets/close_menu.svg'; 
+import download_icon from '../assets/icons/download.svg'; 
+import menu_icon from '../assets/icons/menu.svg'; 
+import close_menu_icon from '../assets/icons/close_menu.svg'; 
 import MediaIcons from '../common/media-icons';
 
 function ElevationScroll(props) {
@@ -197,6 +197,10 @@ const Header = ({value, setValue}) => {
     setValue(newValue);
   };
 
+  const handleClickMenu = () => {
+    setValue('Home');
+  };
+
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
@@ -213,7 +217,7 @@ const Header = ({value, setValue}) => {
               label={tabsName}
               {...a11yProps(index)}
               key={index}
-              selected={value === index}
+              selected={value === index+1}
               disableRipple
             />
           ))}
@@ -324,6 +328,7 @@ const Header = ({value, setValue}) => {
               component={Link}
               disableRipple
               className={classes.buttonLogo}
+              onClick={ handleClickMenu }
             >
               <img alt="companylogo" src={logo} className={classes.logo} />
             </Button>
