@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HowItWorks = ({ value }) => {
+const Intro = ({ value }) => {
   const myRef = React.createRef();
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
@@ -69,7 +69,7 @@ const HowItWorks = ({ value }) => {
   const matches = useMediaQuery(theme.breakpoints.up('lg'));
 
   useEffect(() => {
-    if (value === 0) {
+    if (value === 'Home') {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
     }
   }, [value]);
@@ -144,4 +144,4 @@ const HowItWorks = ({ value }) => {
   );
 };
 
-export default HowItWorks;
+export default Intro;

@@ -197,6 +197,10 @@ const Header = ({value, setValue}) => {
     setValue(newValue);
   };
 
+  const handleClickMenu = () => {
+    setValue('Home');
+  };
+
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
@@ -213,7 +217,7 @@ const Header = ({value, setValue}) => {
               label={tabsName}
               {...a11yProps(index)}
               key={index}
-              selected={value === index}
+              selected={value === index+1}
               disableRipple
             />
           ))}
@@ -324,6 +328,7 @@ const Header = ({value, setValue}) => {
               component={Link}
               disableRipple
               className={classes.buttonLogo}
+              onClick={ handleClickMenu }
             >
               <img alt="companylogo" src={logo} className={classes.logo} />
             </Button>
