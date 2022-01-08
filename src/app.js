@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './common/theme';
 import StyledContainer from './common/container';
 import HowItWorks from './components/how-it-works';
-import Intro from './components/intro';
+// import Intro from './components/intro';
 import AirmaskInNumber from "./components/airmask-in-number";
 import Team from './components/team';
 import HowToStart from './components/how-to-start';

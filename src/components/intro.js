@@ -4,7 +4,7 @@ import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
 import StyledButtonWithIcon from '../common/button-with-icon';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import how_it_workLogo from '../assets/illustrations/how_it_work.svg'
+import howItWorksLogo from '../assets/illustrations/how-it-works.svg'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -133,8 +133,8 @@ const Intro = ({ value }) => {
             className={classes.gridImage}
           >
             <img
-              alt="how_it_workLogo"
-              src={how_it_workLogo}
+              alt="howItWorksLogo"
+              src={howItWorksLogo}
               className={classes.image}
             />
           </Grid>

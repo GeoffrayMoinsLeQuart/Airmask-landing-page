@@ -1,6 +1,5 @@
 import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import theme from './theme';
 
 const useStyles = makeStyles((theme) => ({
   container: {
