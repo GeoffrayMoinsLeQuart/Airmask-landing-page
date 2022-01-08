@@ -98,27 +98,6 @@ const HowItWorks = ({ value }) => {
             </Typography>
           </Grid>
         </Grid>
-        {/* <Grid item lg={12} xl={6} xxl={5}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-end',
-            }}
-            className={classes.gridImage}
-          >
-            <img
-              alt="how_it_workLogo"
-              src={how_it_workLogo}
-              className={classes.image}
-            />
-          </Grid>
-        </Grid> */}
       </Grid>
     </div>
   );
