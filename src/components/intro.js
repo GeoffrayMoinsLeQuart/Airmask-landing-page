@@ -4,17 +4,22 @@ import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
 import StyledButtonWithIcon from '../common/button-with-icon';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import how_it_workLogo from '../assets/illustrations/how_it_work.svg'
+import howItWorksLogo from '../assets/illustrations/how-it-works.svg'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    [theme.breakpoints.up('lg')]: {
-      minHeight: '56.25rem !important',
+    [theme.breakpoints.up('xl')]: { height: '46.25rem' },
+    [theme.breakpoints.down('xl')]: { height: '75rem' },
+    [theme.breakpoints.down('lg')]: {
+      height: '69rem',
     },
-  },
-  gridContainerText: {
-    [theme.breakpoints.down('md')]: {},
+    [theme.breakpoints.down('md')]: {
+      height: '60rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '66rem',
+    },
   },
   gridText: {
     [theme.breakpoints.up('md')]: {
@@ -26,19 +31,21 @@ const useStyles = makeStyles((theme) => ({
   },
   gridImage: {
     [theme.breakpoints.down('sm')]: {
-      marginTop: '7.75rem',
+      maxWidth: '25rem',
+      maxHeight: '25rem',
     },
     [theme.breakpoints.up('sm')]: {
-      marginTop: '7.75rem',
+      width: '30rem',
+      height: '30rem',
     },
     [theme.breakpoints.up('md')]: {
-      marginTop: '10.5rem',
+      width: '40rem',
+      height: '40rem',
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('lg')]: {},
+    [theme.breakpoints.up('xl')]: {
       marginTop: '12.4375rem',
       paddingRight: '8.75rem',
-    },
-    [theme.breakpoints.up('xl')]: {
       zIndex: 1,
       position: 'absolute',
       left: '0px',
@@ -46,10 +53,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    [theme.breakpoints.down('sm')]: {},
-    [theme.breakpoints.up('sm')]: {},
+    width: '100%',
+    height: '100%',
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '3rem',
+      width: '100%',
+      height: '100%',
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '4rem',
+    },
     [theme.breakpoints.up('md')]: {
-      maxWidth: '43.75rem',
+      width: '40rem',
+      height: '40rem',
     },
     [theme.breakpoints.up('lg')]: {
       minWidth: '53.75rem',
@@ -84,10 +100,10 @@ const Intro = ({ value }) => {
           lg: 'row',
           xl: 'row',
         }}
-        justifyContent="space-between"
+        justifyContent="flex-start"
         className={classes.gridContainer}
       >
-        <Grid item lg={12} xl={6} xxl={7} className={classes.gridContainerText}>
+        <Grid item lg={12} xl={6} xxl={7}>
           <Grid
             container
             direction="column"
@@ -113,9 +129,7 @@ const Intro = ({ value }) => {
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>
-            <StyledButtonWithIcon>
-              Download now
-            </StyledButtonWithIcon>
+            <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
           </Grid>
         </Grid>
         <Grid item lg={12} xl={6} xxl={5}>
@@ -133,8 +147,8 @@ const Intro = ({ value }) => {
             className={classes.gridImage}
           >
             <img
-              alt="how_it_workLogo"
-              src={how_it_workLogo}
+              alt="howItWorksLogo"
+              src={howItWorksLogo}
               className={classes.image}
             />
           </Grid>

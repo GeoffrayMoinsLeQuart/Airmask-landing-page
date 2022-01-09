@@ -1,63 +1,36 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
-import StyledButtonWithIcon from '../common/button-with-icon';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import how_it_workLogo from '../assets/illustrations/how_it_work.svg'
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CardHowItWorks from '../common/card-how-it-works';
+import WeResearch from '../assets/illustrations/we-research.svg';
+import AutomaticParticipation from '../assets/illustrations/automatic-participation.svg';
+import YouGetTokensOrNfts from '../assets/illustrations/you-get-tokens-or-nfts.svg';
 
 const useStyles = makeStyles((theme) => ({
-  gridContainer: {
-    [theme.breakpoints.up('lg')]: {
-      minHeight: '56.25rem !important',
+  gridContainerBox: {
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
     },
   },
-  gridContainerText: {
-    [theme.breakpoints.down('md')]: {},
+  gridTitle: {
+    [theme.breakpoints.up('md')]: {
+      marginTop: '3rem',
+    },
   },
   gridText: {
     [theme.breakpoints.up('md')]: {
       marginTop: '3rem',
     },
-    [theme.breakpoints.up('xl')]: {
-      zIndex: 12,
-    },
-  },
-  gridImage: {
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '7.75rem',
-    },
-    [theme.breakpoints.up('sm')]: {
-      marginTop: '7.75rem',
-    },
-    [theme.breakpoints.up('md')]: {
-      marginTop: '10.5rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      marginTop: '12.4375rem',
-      paddingRight: '8.75rem',
-    },
-    [theme.breakpoints.up('xl')]: {
-      zIndex: 1,
-      position: 'absolute',
-      left: '0px',
-      top: '0px',
-    },
-  },
-  image: {
-    [theme.breakpoints.down('sm')]: {},
-    [theme.breakpoints.up('sm')]: {},
-    [theme.breakpoints.up('md')]: {
-      maxWidth: '43.75rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      minWidth: '53.75rem',
-    },
   },
   elementGridText: {
-    paddingTop: '2rem',
-    paddingBottom: '2rem',
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
+  },
+  image: {
+    maxHeight: '700px',
   },
 }));
 
@@ -66,7 +39,7 @@ const HowItWorks = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('lg'));
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     if (value === 0) {
@@ -75,67 +48,89 @@ const HowItWorks = ({ value }) => {
   }, [value]);
   return (
     <div ref={myRef}>
-      <Grid
-        container
-        direction={{
-          xs: 'column',
-          sm: 'column',
-          md: 'column',
-          lg: 'row',
-          xl: 'row',
-        }}
-        justifyContent="space-between"
-        className={classes.gridContainer}
-      >
-        <Grid item lg={12} xl={6} xxl={7} className={classes.gridContainerText}>
+      <Grid container justifyContent="space-between">
+        <Grid item xs={12}>
           <Grid
             container
             direction="column"
             justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-start',
-            }}
+            alignItems="center"
+            className={classes.gridTitle}
+          >
+            <Typography variant="h1" className={classes.title}>
+              How does Airmask work?
+            </Typography>
+            <Typography variant="h4" className={classes.subtitle}>
+              Airmask is a non-custodian wallet that helps you find the best
+              opportunities in the crypto world.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
             className={classes.gridText}
           >
             {matches && (
-              <StyledButtonWithIcon>
-                Never miss an opportunity! 😎
-              </StyledButtonWithIcon>
+              <Grid item xs={12} className={classes.gridContainerBox}>
+                <Grid
+                  container
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  className={classes.gridText}
+                >
+                  <img
+                    alt={WeResearch}
+                    src={WeResearch}
+                    className={classes.image}
+                  />
+                  <Typography
+                    variant="h2"
+                    className={classes.elementGridText}
+                    align="left"
+                  >
+                    We research
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    className={classes.elementGridText}
+                    align="left"
+                  >
+                    Airmask looks for new airdrops for you and analyzes which
+                    ones will be the most profitable.
+                  </Typography>
+                </Grid>
+              </Grid>
             )}
-            <Typography variant="h1" className={classes.elementGridText}>
-              Get airdrops at the speed of light
-            </Typography>
-            <Typography variant="h4" className={classes.elementGridText}>
-              The first version of AirMask is ready to use. Start to earning
-              tokens right now. Come and get it!
-            </Typography>
-            <StyledButtonWithIcon>
-              Download now
-            </StyledButtonWithIcon>
+            {!matches && (
+              <CardHowItWorks
+                title="We research"
+                subTitle="Airmask looks for new airdrops for you and analyzes which ones
+                  will be the most profitable."
+                image={AutomaticParticipation}
+              />
+            )}
           </Grid>
-        </Grid>
-        <Grid item lg={12} xl={6} xxl={5}>
+
           <Grid
             container
-            direction="column"
-            justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-end',
-            }}
-            className={classes.gridImage}
+            justifyContent="space-between"
+            alignItems="space-between"
+            className={classes.gridText}
           >
-            <img
-              alt="how_it_workLogo"
-              src={how_it_workLogo}
-              className={classes.image}
+            <CardHowItWorks
+              title="Automatic participation"
+              subTitle="You don't have to choose which airdrop to participate in. Our system will do it for you."
+              image={AutomaticParticipation}
+            />
+
+            <CardHowItWorks
+              title="You get tokens or NTFs"
+              subTitle="Becoming a crypto trader is easy! And you don't need to spend hours researching the market and building strategies."
+              image={YouGetTokensOrNfts}
             />
           </Grid>
         </Grid>
