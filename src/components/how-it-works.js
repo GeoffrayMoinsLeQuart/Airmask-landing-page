@@ -32,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
   image: {
     maxHeight: '700px',
   },
+  elementGridTitle: {
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
+  },
+  elementGridSubtitle: {
+    paddingBottom: '2rem',
+  },
 }));
 
 const HowItWorks = ({ value }) => {
@@ -39,7 +46,8 @@ const HowItWorks = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const matchesUpMD = useMediaQuery(theme.breakpoints.up('md'));
+  const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     if (value === 0) {
@@ -57,7 +65,10 @@ const HowItWorks = ({ value }) => {
             alignItems="center"
             className={classes.gridTitle}
           >
-            <Typography variant="h1" className={classes.title}>
+            <Typography
+              variant={matchesBelowMD ? 'h2' : 'h1'}
+              className={classes.title}
+            >
               How does Airmask work?
             </Typography>
             <Typography variant="h4" className={classes.subtitle}>
@@ -73,7 +84,7 @@ const HowItWorks = ({ value }) => {
             alignItems="center"
             className={classes.gridText}
           >
-            {matches && (
+            {matchesUpMD && (
               <Grid item xs={12} className={classes.gridContainerBox}>
                 <Grid
                   container
@@ -89,14 +100,14 @@ const HowItWorks = ({ value }) => {
                   />
                   <Typography
                     variant="h2"
-                    className={classes.elementGridText}
+                    className={classes.elementGridTitle}
                     align="left"
                   >
                     We research
                   </Typography>
                   <Typography
                     variant="h4"
-                    className={classes.elementGridText}
+                    className={classes.elementGridSubtitle}
                     align="left"
                   >
                     Airmask looks for new airdrops for you and analyzes which
@@ -105,7 +116,7 @@ const HowItWorks = ({ value }) => {
                 </Grid>
               </Grid>
             )}
-            {!matches && (
+            {!matchesUpMD && (
               <CardHowItWorks
                 title="We research"
                 subTitle="Airmask looks for new airdrops for you and analyzes which ones
