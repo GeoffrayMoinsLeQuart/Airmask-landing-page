@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
-import { Typography, Grid } from '@mui/material';
-
+import { Typography, Grid, useTheme } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
@@ -51,7 +51,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CardHowItWorks = ({ title, subTitle, image }) => {
+  const theme = useTheme();
   const classes = useStyles();
+  const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid item sm={12} md={6} className={classes.gridContainerBox}>
@@ -64,7 +66,7 @@ const CardHowItWorks = ({ title, subTitle, image }) => {
       >
         <img alt={image} src={image} className={classes.image} />
         <Typography
-          variant="h2"
+          variant={matchesBelowMD ? 'h3' : 'h2'}
           className={classes.elementGridText}
           align="center"
         >

@@ -15,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
       height: '69rem',
     },
     [theme.breakpoints.down('md')]: {
-      height: '60rem',
+      height: '50rem',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '66rem',
+      height: '45rem',
     },
   },
   gridText: {
@@ -71,8 +71,11 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '53.75rem',
     },
   },
-  elementGridText: {
-    paddingTop: '2rem',
+  elementGridTitle: {
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
+  },
+  elementGridSubtitle: {
     paddingBottom: '2rem',
   },
 }));
@@ -82,7 +85,8 @@ const Intro = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('lg'));
+  const matchesUpLG = useMediaQuery(theme.breakpoints.up('lg'));
+  const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     if (value === 'Home') {
@@ -117,15 +121,18 @@ const Intro = ({ value }) => {
             }}
             className={classes.gridText}
           >
-            {matches && (
+            {matchesUpLG && (
               <StyledButtonWithIcon>
                 Never miss an opportunity! 😎
               </StyledButtonWithIcon>
             )}
-            <Typography variant="h1" className={classes.elementGridText}>
+            <Typography
+              variant={matchesBelowMD ? 'h2' : 'h1'}
+              className={classes.elementGridTitle}
+            >
               Get airdrops at the speed of light
             </Typography>
-            <Typography variant="h4" className={classes.elementGridText}>
+            <Typography variant="h4" className={classes.elementGridSubtitle}>
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>
