@@ -5,15 +5,9 @@ import { Typography, Grid } from '@mui/material';
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
     width: '100%',
-    '&:nth-child(1)': {
-      [theme.breakpoints.up('xl')]: {
-        paddingRight: '3rem !important',
-      },
-    },
-    '&:nth-child(2)': {
-      [theme.breakpoints.up('xl')]: {
-        paddingLeft: '3rem !important',
-      },
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '2rem',
+      paddingBottom: '2rem',
     },
   },
   gridText: {
@@ -21,43 +15,47 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.ternary.opacity3,
     margin: 'auto',
     [theme.breakpoints.down('sm')]: {
-      height: '880px !important',
+      height: '37.5rem',
+      paddingRight: '1.5rem',
+      paddingLeft: '1.5rem',
     },
     [theme.breakpoints.up('sm')]: {
       paddingRight: '3rem !important',
       paddingLeft: '3rem !important',
-      height: '700x !important',
+      height: '37.5rem !important',
+      width: '31.25rem !important',
     },
     [theme.breakpoints.up('md')]: {
-      height: '950px !important',
+      height: '37.5rem !important',
+      width: '23.5rem !important',
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '43.75rem !important',
+      width: '27rem !important',
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '55rem !important',
+      width: '37rem !important',
+    },
+    [theme.breakpoints.up('xxl')]: {
+      height: '67rem !important',
+      width: '52rem !important',
     },
   },
   elementGridText: {
-    border: '4px solid red !important',
-    paddingTop: '1rem',
-    paddingBottom: '1rem',
+    paddingTop: '0.5rem',
+    paddingBottom: '0.5rem',
   },
   image: {
-    borderColor: 'red !important',
-    [theme.breakpoints.down('sm')]: {
-      width: '300px',
-    },
-    [theme.breakpoints.up('sm')]: {
-      width: '400px',
-      height: '400px',
-    },
-    [theme.breakpoints.up('md')]: {
-      maxWidth: '700px',
-      maxHeight: '700px',
-    },
+    paddingBottom: '1.5rem',
   },
 }));
 
-const ContainerHowItWorks = ({ title, subTitle, image, optionCSS }) => {
+const CardHowItWorks = ({ title, subTitle, image }) => {
   const classes = useStyles();
 
   return (
-    <Grid item lg={12} xl={6} className={classes.gridContainerBox}>
+    <Grid item sm={12} md={6} className={classes.gridContainerBox}>
       <Grid
         container
         direction="column"
@@ -85,4 +83,4 @@ const ContainerHowItWorks = ({ title, subTitle, image, optionCSS }) => {
   );
 };
 
-export default ContainerHowItWorks;
+export default CardHowItWorks;

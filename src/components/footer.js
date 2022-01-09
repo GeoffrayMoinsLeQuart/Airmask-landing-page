@@ -102,10 +102,12 @@ const Footer = ({setValue}) => {
               '&:hover': {
                 opacity: 0.7,
               },
-              textTransform: 'none'
+              textTransform: 'none',
             }}
           >
-            <Typography variant={type}>{nameLink}</Typography>
+            <Typography  variant={type}>
+              {nameLink}
+            </Typography>
           </Button>
         </ThemeProvider>
       </Grid>

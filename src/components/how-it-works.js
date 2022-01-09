@@ -4,7 +4,7 @@ import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import ContainerHowItWorks from '../common/container-how-it-works';
+import CardHowItWorks from '../common/card-how-it-works';
 import WeResearch from '../assets/illustrations/we-research.svg';
 import AutomaticParticipation from '../assets/illustrations/automatic-participation.svg';
 import YouGetTokensOrNfts from '../assets/illustrations/you-get-tokens-or-nfts.svg';
@@ -39,7 +39,7 @@ const HowItWorks = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('lg'));
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     if (value === 0) {
@@ -106,7 +106,7 @@ const HowItWorks = ({ value }) => {
               </Grid>
             )}
             {!matches && (
-              <ContainerHowItWorks
+              <CardHowItWorks
                 title="We research"
                 subTitle="Airmask looks for new airdrops for you and analyzes which ones
                   will be the most profitable."
@@ -121,18 +121,16 @@ const HowItWorks = ({ value }) => {
             alignItems="space-between"
             className={classes.gridText}
           >
-            <ContainerHowItWorks
+            <CardHowItWorks
               title="Automatic participation"
               subTitle="You don't have to choose which airdrop to participate in. Our system will do it for you."
               image={AutomaticParticipation}
-              optionCSS="left"
             />
 
-            <ContainerHowItWorks
+            <CardHowItWorks
               title="You get tokens or NTFs"
               subTitle="Becoming a crypto trader is easy! And you don't need to spend hours researching the market and building strategies."
               image={YouGetTokensOrNfts}
-              optionCSS="right"
             />
           </Grid>
         </Grid>
