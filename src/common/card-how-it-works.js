@@ -4,7 +4,6 @@ import { Typography, Grid } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
-    width: '100%',
     [theme.breakpoints.down('md')]: {
       paddingTop: '2rem',
       paddingBottom: '2rem',

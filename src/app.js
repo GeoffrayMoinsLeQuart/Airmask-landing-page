@@ -20,10 +20,6 @@ const [value, setValue] = useState(0);
       <Header value={value} setValue={setValue} />
       <StyledContainer value={value} setValue={setValue}>
         <Intro value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
         <HowItWorks value={value} />
         <br />
         <br />

@@ -9,8 +9,16 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    [theme.breakpoints.up('lg')]: {
-      minHeight: '56.25rem !important',
+    [theme.breakpoints.up('xl')]: { height: '46.25rem' },
+    [theme.breakpoints.down('xl')]: { height: '75rem' },
+    [theme.breakpoints.down('lg')]: {
+      height: '69rem',
+    },
+    [theme.breakpoints.down('md')]: {
+      height: '60rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '66rem',
     },
   },
   gridText: {
@@ -23,19 +31,21 @@ const useStyles = makeStyles((theme) => ({
   },
   gridImage: {
     [theme.breakpoints.down('sm')]: {
-      marginTop: '7.75rem',
+      maxWidth: '25rem',
+      maxHeight: '25rem',
     },
     [theme.breakpoints.up('sm')]: {
-      marginTop: '7.75rem',
+      width: '30rem',
+      height: '30rem',
     },
     [theme.breakpoints.up('md')]: {
-      marginTop: '10.5rem',
+      width: '40rem',
+      height: '40rem',
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('lg')]: {},
+    [theme.breakpoints.up('xl')]: {
       marginTop: '12.4375rem',
       paddingRight: '8.75rem',
-    },
-    [theme.breakpoints.up('xl')]: {
       zIndex: 1,
       position: 'absolute',
       left: '0px',
@@ -43,10 +53,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    [theme.breakpoints.down('sm')]: {},
-    [theme.breakpoints.up('sm')]: {},
+    width: '100%',
+    height: '100%',
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '3rem',
+      width: '100%',
+      height: '100%',
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '4rem',
+    },
     [theme.breakpoints.up('md')]: {
-      maxWidth: '43.75rem',
+      width: '40rem',
+      height: '40rem',
     },
     [theme.breakpoints.up('lg')]: {
       minWidth: '53.75rem',
@@ -81,7 +100,7 @@ const Intro = ({ value }) => {
           lg: 'row',
           xl: 'row',
         }}
-        justifyContent="space-between"
+        justifyContent="flex-start"
         className={classes.gridContainer}
       >
         <Grid item lg={12} xl={6} xxl={7}>
