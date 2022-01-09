@@ -128,8 +128,6 @@ const HowItWorks = ({ value }) => {
 
           <Grid
             container
-            justifyContent="space-between"
-            alignItems="space-between"
             className={classes.gridText}
           >
             <CardHowItWorks

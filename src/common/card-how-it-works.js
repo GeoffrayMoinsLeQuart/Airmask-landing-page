@@ -47,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     paddingBottom: '1.5rem',
+    width: '100%',
+    height: '100%',
   },
 }));
 
@@ -64,21 +66,27 @@ const CardHowItWorks = ({ title, subTitle, image }) => {
         alignItems="center"
         className={classes.gridText}
       >
-        <img alt={image} src={image} className={classes.image} />
-        <Typography
-          variant={matchesBelowMD ? 'h3' : 'h2'}
-          className={classes.elementGridText}
-          align="center"
-        >
-          {title}
-        </Typography>
+        <Grid item sm={6}>
+          <img alt={image} src={image} className={classes.image} />
+        </Grid>
+        <Grid item sm={2}>
+          <Typography
+            variant={matchesBelowMD ? 'h3' : 'h2'}
+            className={classes.elementGridText}
+            align="center"
+          >
+            {title}
+          </Typography>
+        </Grid>
+      <Grid item sm={2}>
         <Typography
           variant="h4"
           className={classes.elementGridText}
           align="center"
-        >
+          >
           {subTitle}
         </Typography>
+          </Grid>
       </Grid>
     </Grid>
   );
