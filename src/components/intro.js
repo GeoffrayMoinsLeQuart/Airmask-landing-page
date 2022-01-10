@@ -94,8 +94,8 @@ const Intro = ({ value }) => {
     }
   }, [value]);
   return (
-    <div ref={myRef}>
       <Grid
+        ref={myRef}
         container
         direction={{
           xs: 'column',
@@ -161,7 +161,6 @@ const Intro = ({ value }) => {
           </Grid>
         </Grid>
       </Grid>
-    </div>
   );
 };
 
