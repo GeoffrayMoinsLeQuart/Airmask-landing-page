@@ -1,9 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
-import { Typography, Grid, useTheme } from '@mui/material';
+import {
+  Typography,
+  Grid,
+  useTheme,
+} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
+import TeamMember from '../../assets/images/team-member.svg';
+import CardTeam from './card-team'
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
@@ -48,7 +54,25 @@ const Team = ({ value }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={12}></Grid>
+        <Grid item>
+          <Grid container>
+            <CardTeam
+              title="Geoffray Atlan"
+              subTitle="Front-end developer"
+              image={TeamMember}
+            />
+            <CardTeam
+              title="Geoffray Atlan"
+              subTitle="Front-end developer"
+              image={TeamMember}
+            />
+            <CardTeam
+              title="Geoffray Atlan"
+              subTitle="Front-end developer"
+              image={TeamMember}
+            />
+          </Grid>
+        </Grid>
       </Grid>
     );
 };
