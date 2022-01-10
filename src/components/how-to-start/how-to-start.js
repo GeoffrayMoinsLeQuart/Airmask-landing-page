@@ -1,18 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 
-const FAQ = ({ value }) => {
+const HowToStart = ({ value }) => {
   const myRef = React.createRef();
   const offsetCalcul = ScrollToELement();
 
   useEffect(() => {
-    if (value === 4) {
+    if (value === 3) {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
     }
   }, [value]);
-
-  return <div ref={myRef}>FAQ Component</div>;
+  return <div ref={myRef}>How To Start Component</div>;
 };
 
-export default FAQ;
+export default HowToStart;

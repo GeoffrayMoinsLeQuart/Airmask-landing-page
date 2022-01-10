@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import CardHowItWorks from '../common/card-how-it-works';
-import WeResearch from '../assets/illustrations/we-research.svg';
-import AutomaticParticipation from '../assets/illustrations/automatic-participation.svg';
-import YouGetTokensOrNfts from '../assets/illustrations/you-get-tokens-or-nfts.svg';
+import CardHowItWorks from './card-how-it-works';
+import WeResearch from '../../assets/illustrations/we-research.svg';
+import AutomaticParticipation from '../../assets/illustrations/automatic-participation.svg';
+import YouGetTokensOrNfts from '../../assets/illustrations/you-get-tokens-or-nfts.svg';
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {

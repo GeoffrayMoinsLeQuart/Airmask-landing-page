@@ -22,10 +22,6 @@ const [value, setValue] = useState(0);
         <Intro value={value} />
         <HowItWorks value={value} />
         <AirmaskInNumber value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
         <Team value={value} />
         <br />
         <br />
