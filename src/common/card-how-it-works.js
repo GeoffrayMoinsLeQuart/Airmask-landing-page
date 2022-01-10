@@ -5,6 +5,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
     [theme.breakpoints.down('md')]: {
+      paddingTop: '1rem',
+      paddingBottom: '1rem',
+    },
+    [theme.breakpoints.up('md')]: {
       paddingTop: '2rem',
       paddingBottom: '2rem',
     },

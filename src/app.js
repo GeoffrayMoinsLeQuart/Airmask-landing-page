@@ -21,10 +21,6 @@ const [value, setValue] = useState(0);
       <StyledContainer value={value} setValue={setValue}>
         <Intro value={value} />
         <HowItWorks value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
         <AirmaskInNumber value={value} />
         <br />
         <br />
