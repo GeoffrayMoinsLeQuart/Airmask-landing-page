@@ -57,7 +57,7 @@ const Team = ({ value }) => {
         <Grid item sx={{ margin: 'auto' }}>
           <Grid
             container
-          >
+            justifyContent='center' >
             <CardTeam
               title="Geoffray Atlan"
               subTitle="Front-end developer"
