@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
-import StyledButtonWithIcon from '../common/button-with-icon';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
+import StyledButtonWithIcon from '../../common/button-with-icon';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import howItWorksLogo from '../assets/illustrations/how-it-works.svg'
+import howItWorksLogo from '../../assets/illustrations/how-it-works.svg'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({

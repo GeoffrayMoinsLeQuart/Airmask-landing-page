@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { ScrollToELement, ScrollToELement2 } from '../common/scroll-to-element';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 import { Typography, Grid, useTheme } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
-import AboutAirmaskInNumbers from '../assets/illustrations/airmask-in-numbers.svg';
-import CardAirmaskInNumber from '../common/card-airmask-in-numbers';
+import AboutAirmaskInNumbers from '../../assets/illustrations/airmask-in-numbers.svg';
+import CardAirmaskInNumber from './card-airmask-in-numbers';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
