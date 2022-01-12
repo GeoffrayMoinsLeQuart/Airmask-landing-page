@@ -19,19 +19,11 @@ const [value, setValue] = useState(0);
     <ThemeProvider theme={theme}>
       <Header value={value} setValue={setValue} />
       <StyledContainer value={value} setValue={setValue}>
-        {/* <Intro value={value} />
+        <Intro value={value} />
         <HowItWorks value={value} />
-        <AirmaskInNumber value={value} /> */}
+        <AirmaskInNumber value={value} />
         <Team value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
         <HowToStart value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
         <FAQ value={value} />
         <br />
         <br />

@@ -54,8 +54,10 @@ const Team = ({ value }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Grid container>
+        <Grid item sx={{ margin: 'auto' }}>
+          <Grid
+            container
+          >
             <CardTeam
               title="Geoffray Atlan"
               subTitle="Front-end developer"
