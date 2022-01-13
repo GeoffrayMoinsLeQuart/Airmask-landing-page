@@ -1,7 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import {
   Button,
-  SvgIcon,
   TextField,
   InputAdornment,
   Box,

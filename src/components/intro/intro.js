@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
-import StyledButtonWithIcon from '../../common/button-with-icon';
 import { Typography, Grid, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import howItWorksLogo from '../../assets/illustrations/how-it-works.svg'
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '3rem',
     },
     [theme.breakpoints.up('xl')]: {
-      zIndex: 12,
+      zIndex: 1200,
     },
   },
   gridImage: {
@@ -85,7 +84,6 @@ const Intro = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matchesUpLG = useMediaQuery(theme.breakpoints.up('lg'));
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
@@ -130,13 +128,6 @@ const Intro = ({ value }) => {
           className={classes.gridText}
         >
           <Grid item>
-            {matchesUpLG && (
-              <StyledButtonWithIcon>
-                Never miss an opportunity! 😎
-              </StyledButtonWithIcon>
-            )}
-          </Grid>
-          <Grid item>
             <Typography
               variant={matchesBelowMD ? 'h2' : 'h1'}
               className={classes.elementGridTitle}
@@ -149,9 +140,6 @@ const Intro = ({ value }) => {
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>
-          </Grid>
-          <Grid item>
-            <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
           </Grid>
         </Grid>
       </Grid>
