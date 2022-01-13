@@ -12,27 +12,28 @@ import TeamMember from '../../assets/images/team-member.svg';
 import CardTeam from './card-team'
 
 const useStyles = makeStyles((theme) => ({
-  gridContainerBox: {
-    [theme.breakpoints.up('md')]: {
-      width: '100%',
-    },
-  },
   mainGrid: {
     [theme.breakpoints.down('md')]: {
-      paddingTop: '4.5rem',
+      paddingTop: '1.5rem',
     },
     [theme.breakpoints.up('md')]: {
-      paddingTop: '4.5rem',
+      paddingTop: '1.5rem',
     },
     [theme.breakpoints.up('lg')]: {
-      paddingTop: '5.5rem',
+      paddingTop: '2.5rem',
     },
     [theme.breakpoints.up('xl')]: {
-      paddingTop: '6.5rem',
+      paddingTop: '3.5rem',
     },
     [theme.breakpoints.up('xxl')]: {
-      paddingTop: '8.5rem',
+      paddingTop: '2.5rem',
     },
+  },
+  title: {
+    paddingBottom: '0.5rem',
+  },
+  subtitle: {
+    paddingBottom: '3.75rem',
   },
 }));
 
@@ -41,8 +42,10 @@ const Team = ({ value }) => {
   const offsetCalcul = ScrollToELement();
   const classes = useStyles();
   const theme = useTheme();
-  const matchesUpMD = useMediaQuery(theme.breakpoints.up('md'));
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
+  const typographyProps = {
+    align: matchesBelowMD ? 'center' : 'left',
+  };
 
   useEffect(() => {
     if (value === 2) {
@@ -70,7 +73,11 @@ const Team = ({ value }) => {
             >
               Meet our team
             </Typography>
-            <Typography variant="h4" className={classes.subtitle}>
+            <Typography
+              variant="h4"
+              className={classes.subtitle}
+              {...typographyProps}
+            >
               Know our team by sight. We have tried on this project to create
               for you a unique tool for earning tokens.
             </Typography>

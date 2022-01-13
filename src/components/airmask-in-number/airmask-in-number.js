@@ -12,18 +12,23 @@ const useStyles = makeStyles((theme) => ({
   mainGrid: {
     [theme.breakpoints.down('md')]: {
       paddingTop: '4.5rem',
+      paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('md')]: {
       paddingTop: '4.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('lg')]: {
       paddingTop: '5.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('xl')]: {
       paddingTop: '6.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '8.5rem',
+      paddingBottom: '5.5rem !important',
     },
   },
   elementGridText: {
@@ -54,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: '70rem',
     },
   },
-  gridImage:{
+  gridImage: {
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
@@ -100,10 +105,6 @@ const AirmaskInNumber = ({ value }) => {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
     }
   }, [value]);
-
-  // useEffect(() => {
-  //   setOffsetCalcul2(useIsMobile());
-  // }, [useIsMobile()]);
 
   return (
     <Grid
