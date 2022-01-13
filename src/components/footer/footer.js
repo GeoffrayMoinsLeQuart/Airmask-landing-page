@@ -5,6 +5,7 @@ import logo from '../../assets/logos/logo.svg';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import theme from '../../common/theme';
 import MediaIcons from '../../common/media-icons';
+import WantAwareButton from '../../common/want-aware-button';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -116,6 +117,7 @@ const Footer = ({setValue}) => {
 
   return (
     <footer className={classes.footer}>
+      <WantAwareButton/>
       <Grid container justifyContent="space-between">
         <Grid container justifyContent="space-between">
           <Grid container item xs={12} md={6} justifyContent={designGrid}>

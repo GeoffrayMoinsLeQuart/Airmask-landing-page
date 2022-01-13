@@ -1,29 +1,33 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
-import { Typography, Grid, useTheme } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Typography, Grid, useTheme, useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import HowToStartIllustration from '../../assets/illustrations/how-to-start.svg';
 import GridHowToStart from './grid-how-to-start';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     [theme.breakpoints.down('md')]: {
       paddingTop: '4.5rem',
+      paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('md')]: {
       paddingTop: '4.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('lg')]: {
       paddingTop: '5.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('xl')]: {
       paddingTop: '6.5rem',
+      paddingBottom: '5.5rem !important',
     },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '8.5rem',
+      paddingBottom: '5.5rem !important',
     },
   },
   elementGridText: {
@@ -36,8 +40,6 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     paddingBottom: '1.5rem',
-    // width: '100%',
-    // height: '100%',
     [theme.breakpoints.down('md')]: {
       paddingTop: '3rem',
     },
@@ -99,7 +101,9 @@ const HowToStart = ({ value }) => {
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const offsetCalcul2 = useIsMobile('start');
-
+  const typographyProps = {
+    align: matchesBelowMD ? 'center' : 'left',
+  };
   useEffect(() => {
     if (value === 3) {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
@@ -120,6 +124,7 @@ const HowToStart = ({ value }) => {
             <Typography
               variant={matchesBelowMD ? 'h2' : 'h1'}
               className={classes.title}
+              {...typographyProps}
             >
               How to start?
             </Typography>

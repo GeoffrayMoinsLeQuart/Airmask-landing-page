@@ -51,6 +51,9 @@ const HowItWorks = ({ value }) => {
   const theme = useTheme();
   const matchesUpMD = useMediaQuery(theme.breakpoints.up('md'));
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
+  const typographyProps = {
+    align: matchesBelowMD ? 'center' : 'left',
+  };
 
   useEffect(() => {
     if (value === 0) {
@@ -73,7 +76,11 @@ const HowItWorks = ({ value }) => {
           >
             How does Airmask work?
           </Typography>
-          <Typography variant="h4" className={classes.subtitle}>
+          <Typography
+            variant="h4"
+            className={classes.subtitle}
+            {...typographyProps}
+          >
             Airmask is a non-custodian wallet that helps you find the best
             opportunities in the crypto world.
           </Typography>
