@@ -4,10 +4,10 @@ import { useTheme } from '@mui/material';
 
 export const ScrollToELement = () => {
     const theme = useTheme();
-    const isLGScreen = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMDScreen = useMediaQuery(theme.breakpoints.up('md'));
-    const isSMScreen = useMediaQuery(theme.breakpoints.up('sm'));
     const isXSScreen = useMediaQuery(theme.breakpoints.up('xs'));
+    const isMDScreen = useMediaQuery(theme.breakpoints.up('md'));
+    const isLGScreen = useMediaQuery(theme.breakpoints.up('lg'));
+    const isSMScreen = useMediaQuery(theme.breakpoints.up('sm'));
       if (isLGScreen) {
         return 170;
       } else if (isMDScreen) {

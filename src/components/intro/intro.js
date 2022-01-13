@@ -9,16 +9,16 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    [theme.breakpoints.up('xl')]: { height: '46.25rem' },
+    [theme.breakpoints.up('xl')]: { height: '48rem' },
     [theme.breakpoints.down('xl')]: { height: '75rem' },
     [theme.breakpoints.down('lg')]: {
-      height: '69rem',
+      height: '65rem',
     },
     [theme.breakpoints.down('md')]: {
-      height: '50rem',
+      height: '51rem',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '45rem',
+      height: '48rem',
     },
   },
   gridText: {
@@ -94,73 +94,89 @@ const Intro = ({ value }) => {
     }
   }, [value]);
   return (
-      <Grid
-        ref={myRef}
-        container
-        direction={{
-          xs: 'column',
-          sm: 'column',
-          md: 'column',
-          lg: 'row',
-          xl: 'row',
-        }}
-        justifyContent="flex-start"
-        className={classes.gridContainer}
-      >
-        <Grid item lg={12} xl={6} xxl={7}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-start',
-            }}
-            className={classes.gridText}
-          >
+    <Grid
+      ref={myRef}
+      container
+      direction={{
+        xs: 'column',
+        sm: 'column',
+        md: 'column',
+        lg: 'row',
+        xl: 'row',
+      }}
+      justifyContent="flex-start"
+      className={classes.gridContainer}
+    >
+      <Grid item lg={12} xl={6} xxl={7}>
+        <Grid
+          container
+          direction="column"
+          alignItems={{
+            xs: 'center',
+            sm: 'center',
+            md: 'center',
+            lg: 'center',
+            xl: 'flex-start',
+            xxl: 'center',
+          }}
+          justifyContent={{
+            xs: 'flex-start',
+            sm: 'flex-start',
+            md: 'flex-start',
+            lg: 'flex-start',
+            xl: 'flex-start',
+            xxl: 'flex-start',
+          }}
+          className={classes.gridText}
+        >
+          <Grid item>
             {matchesUpLG && (
               <StyledButtonWithIcon>
                 Never miss an opportunity! 😎
               </StyledButtonWithIcon>
             )}
+          </Grid>
+          <Grid item>
             <Typography
               variant={matchesBelowMD ? 'h2' : 'h1'}
               className={classes.elementGridTitle}
             >
               Get airdrops at the speed of light
             </Typography>
+          </Grid>
+          <Grid item>
             <Typography variant="h4" className={classes.elementGridSubtitle}>
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>
+          </Grid>
+          <Grid item>
             <StyledButtonWithIcon>Download now</StyledButtonWithIcon>
           </Grid>
         </Grid>
-        <Grid item lg={12} xl={6} xxl={5}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-start"
-            alignItems={{
-              xs: 'center',
-              sm: 'center',
-              md: 'center',
-              lg: 'center',
-              xl: 'flex-end',
-            }}
-            className={classes.gridImage}
-          >
-            <img
-              alt="howItWorksLogo"
-              src={howItWorksLogo}
-              className={classes.image}
-            />
-          </Grid>
+      </Grid>
+      <Grid item lg={12} xl={6} xxl={5}>
+        <Grid
+          container
+          direction="column"
+          justifyContent="flex-start"
+          alignItems={{
+            xs: 'center',
+            sm: 'center',
+            md: 'center',
+            lg: 'center',
+            xl: 'flex-end',
+          }}
+          className={classes.gridImage}
+        >
+          <img
+            alt="howItWorksLogo"
+            src={howItWorksLogo}
+            className={classes.image}
+          />
         </Grid>
       </Grid>
+    </Grid>
   );
 };
 

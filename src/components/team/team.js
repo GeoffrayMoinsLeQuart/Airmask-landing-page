@@ -17,6 +17,23 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  mainGrid: {
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '4.5rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: '4.5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: '5.5rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingTop: '6.5rem',
+    },
+    [theme.breakpoints.up('xxl')]: {
+      paddingTop: '8.5rem',
+    },
+  },
 }));
 
 const Team = ({ value }) => {
@@ -33,7 +50,12 @@ const Team = ({ value }) => {
     }
   }, [value]);
     return (
-      <Grid ref={myRef} container justifyContent="space-between">
+      <Grid
+        ref={myRef}
+        container
+        justifyContent="space-between"
+        className={classes.mainGrid}
+      >
         <Grid item xs={12}>
           <Grid
             container
@@ -55,9 +77,7 @@ const Team = ({ value }) => {
           </Grid>
         </Grid>
         <Grid item sx={{ margin: 'auto' }}>
-          <Grid
-            container
-            justifyContent='center' >
+          <Grid container justifyContent="center">
             <CardTeam
               title="Geoffray Atlan"
               subTitle="Front-end developer"

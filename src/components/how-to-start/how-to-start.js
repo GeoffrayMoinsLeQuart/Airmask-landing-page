@@ -6,6 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
 import HowToStartIllustration from '../../assets/illustrations/how-to-start.svg';
 import GridHowToStart from './grid-how-to-start';
+import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -97,12 +98,14 @@ const HowToStart = ({ value }) => {
   const theme = useTheme();
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
+  const offsetCalcul2 = useIsMobile('start');
 
   useEffect(() => {
     if (value === 3) {
-      ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
+      ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
     }
   }, [value]);
+
   return (
     <Grid
       ref={myRef}

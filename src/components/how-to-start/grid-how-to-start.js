@@ -90,7 +90,7 @@ const GridHowToStart = () => {
               {step.label}
             </Typography>
             <Typography
-              variant={matchesBelowMD ? 'h4' : 'h3'}
+              variant='h4'
               className={classes.textTimelineElement}
             >
               {step.description}

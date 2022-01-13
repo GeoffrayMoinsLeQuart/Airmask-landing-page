@@ -25,26 +25,6 @@ const [value, setValue] = useState(0);
         <Team value={value} />
         <HowToStart value={value} />
         <FAQ value={value} />
-        <br />
-        <br />
-        <br />
-        <br />
-        {/* HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello Hello Hello */}
-        Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello
-        HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello Hello
-        HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello Hello
-        HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello Hello
-        HelloHelloHello Hello Hello ollo Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello llo Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello llo Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHello Hello Hello Hello Hello Hello Hello Hello Hello
-        Hello HelloHelloHelo Hello Hello Hello Hello HelloHelloHello Hello Hello
-        ollo Hello Hello Hello Hello Hello Hello Hello HelloHelloHello Hello
-        Hello Hello Hello Hello Hello Hello Hello
       </StyledContainer>
       <Footer value={value} setValue={setValue} />
     </ThemeProvider>

@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
-import { Typography, Grid, useTheme } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Typography, Grid, useTheme, useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import AboutAirmaskInNumbers from '../../assets/illustrations/airmask-in-numbers.svg';
 import CardAirmaskInNumber from './card-airmask-in-numbers';
+import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -86,18 +87,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AirmaskInNumber = ({ value }) => {
+
   const myRef = React.createRef();
-  const offsetCalcul = ScrollToELement();
   const theme = useTheme();
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
-
+  const offsetCalcul = ScrollToELement();
+  const offsetCalcul2 = useIsMobile('number');
 
   useEffect(() => {
     if (value === 1) {
-      ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
+      ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
     }
   }, [value]);
+
+  // useEffect(() => {
+  //   setOffsetCalcul2(useIsMobile());
+  // }, [useIsMobile()]);
 
   return (
     <Grid
@@ -115,7 +121,7 @@ const AirmaskInNumber = ({ value }) => {
         />
       </Grid>
       <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
-        <Grid container direction="column">
+        <Grid container direction="column" alignContent="center">
           <Grid item>
             <Typography
               variant={matchesBelowMD ? 'h2' : 'h1'}
