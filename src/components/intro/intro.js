@@ -117,7 +117,7 @@ const Intro = ({ value }) => {
             md: 'center',
             lg: 'center',
             xl: 'flex-start',
-            xxl: 'center',
+            xxl: 'flex-start',
           }}
           justifyContent={{
             xs: 'flex-start',
