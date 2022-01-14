@@ -45,6 +45,14 @@ export default createTheme({
       fontSize: '4rem',
       lineHeight: '6rem',
     },
+    h1Mobile: {
+      fontFamily: ['Rubik', 'sans-serif'].join(','),
+      color: AirMaskWhite,
+      textTransform: 'none',
+      fontWeight: 500,
+      fontSize: '1.875rem',
+      lineHeight: '2.8125rem',
+    },
     h2: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
       color: AirMaskWhite,
@@ -52,6 +60,14 @@ export default createTheme({
       fontWeight: 500,
       fontSize: '2.25rem',
       lineHeight: '3.375rem',
+    },
+    h2Mobile: {
+      fontFamily: ['Rubik', 'sans-serif'].join(','),
+      color: AirMaskWhite,
+      textTransform: 'none',
+      fontWeight: 500,
+      fontSize: '1.375rem',
+      lineHeight: '2.0625rem',
     },
     h3: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),

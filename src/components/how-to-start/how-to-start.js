@@ -65,8 +65,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridImage: {
-    [theme.breakpoints.down('md')]: {
-      // display: 'none',
+    height: '100% !important',
+    [theme.breakpoints.up('md')]: {
+      paddingTop: '6.5rem',
     },
   },
   title: {
@@ -92,6 +93,14 @@ const useStyles = makeStyles((theme) => ({
   gridText: {
     [theme.breakpoints.up('sm')]: {
       paddingLeft: '3rem',
+    },
+  },
+  gridTextTitle: {
+    [theme.breakpoints.down('md')]: {
+      paddingBottom: '3.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: '1.25rem',
     },
   },
 }));
@@ -122,9 +131,9 @@ const HowToStart = ({ value }) => {
     >
       <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
         <Grid container direction="column">
-          <Grid item>
+          <Grid item className={classes.gridTextTitle}>
             <Typography
-              variant={matchesBelowMD ? 'h2' : 'h1'}
+              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
               className={classes.title}
               {...typographyProps}
             >
@@ -145,7 +154,7 @@ const HowToStart = ({ value }) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} className={classes.gridImage}>
+      <Grid item xs={12} sm={12} md={6}>
         <Grid
           container
           justifyContent={{
@@ -155,6 +164,14 @@ const HowToStart = ({ value }) => {
             lg: 'flex-end',
             xl: 'flex-end',
           }}
+          alignContent={{
+            xs: 'center',
+            sm: 'center',
+            md: 'center',
+            lg: 'center',
+            xl: 'center',
+          }}
+          className={classes.gridImage}
         >
           <img
             alt={HowToStartIllustration}

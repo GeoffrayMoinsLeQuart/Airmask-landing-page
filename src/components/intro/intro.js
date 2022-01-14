@@ -9,7 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
     position: 'relative',
-    [theme.breakpoints.up('xl')]: { height: '48rem' },
+    [theme.breakpoints.up('xl')]: { height: '54em' },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '8.5rem',
       paddingBottom: '5.5rem',
@@ -138,7 +138,7 @@ const Intro = ({ value }) => {
         >
           <Grid item>
             <Typography
-              variant={matchesBelowMD ? 'h2' : 'h1'}
+              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
               className={classes.elementGridTitle}
             >
               Get airdrops at the speed of light

@@ -111,7 +111,7 @@ const GetStarted = ({ value }) => {
           <Grid item>
             <Typography
               {...typographyProps}
-              variant={matchesBelowMD ? 'h2' : 'h1'}
+              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
               className={classes.title}
             >
               Get Started

@@ -7,14 +7,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       paddingBottom: '1rem',
     },
-    [theme.breakpoints.up('sm')]: {
-      paddingBottom: '1rem',
-    },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.down('md')]: {
       paddingBottom: '1.5rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      paddingBottom: '2rem',
     },
     [theme.breakpoints.up('xl')]: {
       paddingBottom: '2.8rem',
@@ -49,25 +43,22 @@ const CardAirmaskInNumber = ({ title, subTitle, text }) => {
       >
         <Grid item>
           <Typography
-            variant={matchesBelowMD ? 'h2' : 'h1'}
+            variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
             className={classes.elementGridText}
           >
             {title}
           </Typography>
         </Grid>
         <Grid item>
-          <Typography
-            variant={matchesBelowMD ? 'h4' : 'h2'}
-            className={classes.elementGridText}
-          >
+          <Typography variant="h4" color='primary' className={classes.elementGridText}>
             {subTitle}
           </Typography>
         </Grid>
-          <Grid item className={classes.GridText}>
-            <Typography variant="h4" className={classes.elementGridText}>
-              {text}
-            </Typography>
-          </Grid>
+        <Grid item className={classes.GridText}>
+          <Typography variant="h4" className={classes.elementGridText}>
+            {text}
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );

@@ -114,7 +114,7 @@ const FAQ = ({ value }) => {
     <div className={classes.mainDiv}>
       <Typography
         {...typographyProps}
-        variant={matchesBelowMD ? 'h2' : 'h1'}
+        variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
         className={classes.title}
       >
         FAQ

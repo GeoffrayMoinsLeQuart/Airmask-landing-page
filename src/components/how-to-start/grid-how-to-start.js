@@ -84,7 +84,7 @@ const GridHowToStart = () => {
           </Grid>
           <Grid item xs={10}>
             <Typography
-              variant={matchesBelowMD ? 'h3' : 'h2'}
+              variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
               className={classes.titleTimelineElement}
             >
               {step.label}
