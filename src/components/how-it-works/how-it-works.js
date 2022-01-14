@@ -88,7 +88,7 @@ const HowItWorks = ({ value }) => {
             How does Airmask work?
           </Typography>
           <Typography
-            variant="h4"
+            variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
             className={classes.subtitle}
             {...typographyProps}
           >
@@ -119,14 +119,14 @@ const HowItWorks = ({ value }) => {
                   className={classes.image}
                 />
                 <Typography
-                  variant="h2"
+                  variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
                   className={classes.elementGridTitle}
                   align="left"
                 >
                   We research
                 </Typography>
                 <Typography
-                  variant="h4"
+                  variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
                   className={classes.elementGridSubtitle}
                   align="left"
                 >

@@ -50,12 +50,12 @@ const CardAirmaskInNumber = ({ title, subTitle, text }) => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="h4" color='primary' className={classes.elementGridText}>
+          <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} color='primary' className={classes.elementGridText}>
             {subTitle}
           </Typography>
         </Grid>
         <Grid item className={classes.GridText}>
-          <Typography variant="h4" className={classes.elementGridText}>
+          <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} className={classes.elementGridText}>
             {text}
           </Typography>
         </Grid>

@@ -79,8 +79,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   subtitle: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingBottom: '2rem',
+    },
+  },
+  gridTitle: {
+    [theme.breakpoints.down('md')]: {
+      margin: 'auto !important',
     },
   },
 }));
@@ -108,7 +113,7 @@ const GetStarted = ({ value }) => {
           sx={{ height: '100%' }}
           className={classes.gridText}
         >
-          <Grid item>
+          <Grid item className={classes.gridTitle}>
             <Typography
               {...typographyProps}
               variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
@@ -119,7 +124,7 @@ const GetStarted = ({ value }) => {
           </Grid>
           <Grid item>
             <Typography
-              variant="h4"
+              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
               className={classes.subtitle}
               {...typographyProps}
             >

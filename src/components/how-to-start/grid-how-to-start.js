@@ -48,7 +48,12 @@ const GridHowToStart = () => {
   return (
     <>
       {steps.map((step, index) => (
-        <Grid container direction="row" key={index + step.label} sx={{marginBottom: '1rem'}}>
+        <Grid
+          container
+          direction="row"
+          key={index + step.label}
+          sx={{ marginBottom: '1rem' }}
+        >
           <Grid item xs={1}>
             <Grid
               container
@@ -80,8 +85,7 @@ const GridHowToStart = () => {
               )}
             </Grid>
           </Grid>
-          <Grid item xs={1}>
-          </Grid>
+          <Grid item xs={1}></Grid>
           <Grid item xs={10}>
             <Typography
               variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
@@ -90,7 +94,7 @@ const GridHowToStart = () => {
               {step.label}
             </Typography>
             <Typography
-              variant='h4'
+              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
               className={classes.textTimelineElement}
             >
               {step.description}

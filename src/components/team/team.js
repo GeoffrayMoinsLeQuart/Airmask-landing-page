@@ -76,7 +76,7 @@ const Team = ({ value }) => {
               Meet our team
             </Typography>
             <Typography
-              variant="h4"
+              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
               className={classes.subtitle}
               {...typographyProps}
             >

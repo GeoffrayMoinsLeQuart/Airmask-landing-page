@@ -138,12 +138,12 @@ const FAQ = ({ value }) => {
             <Typography variant="h5">{faq.label}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography variant="h4">{faq.description}</Typography>
+            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description}</Typography>
             {faq.description1 && (
-              <Typography variant="h4">{faq.description1}</Typography>
+              <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description1}</Typography>
             )}
             {faq.description2 && (
-              <Typography variant="h4">{faq.description2}</Typography>
+              <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description2}</Typography>
             )}
           </AccordionDetails>
         </Accordion>

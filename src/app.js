@@ -20,10 +20,10 @@ const [value, setValue] = useState(0);
     <ThemeProvider theme={theme}>
       <Header value={value} setValue={setValue} />
       <StyledContainer value={value} setValue={setValue}>
-        {/* <Intro value={value} />
+        <Intro value={value} />
         <HowItWorks value={value} />
         <AirmaskInNumber value={value} />
-        <Team value={value} /> */}
+        <Team value={value} /> 
         <HowToStart value={value} />
         <GetStarted />
         <FAQ value={value} />

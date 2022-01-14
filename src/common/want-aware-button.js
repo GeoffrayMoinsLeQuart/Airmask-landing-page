@@ -69,7 +69,7 @@ const WantAwareButton = ({ children }) => {
     // This is equivalent to theme.breakpoints.down("md")
     const typographyProps = {
       align: matchesBelowLG ? 'center' : 'left',
-      variant:matchesBelowMD ? 'h5' : matchesBelowXL ? 'h3' : 'h2'
+      variant: matchesBelowMD ? 'h2Mobile' : matchesBelowXL ? 'h3' : 'h2',
     };
     return <Typography {...typographyProps}>{children}</Typography>;
   }

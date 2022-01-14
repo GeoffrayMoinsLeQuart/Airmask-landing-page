@@ -73,7 +73,7 @@ const CardTeam = ({ title, subTitle, image }) => {
         <Typography gutterBottom variant="h3" align="center">
           {title}
         </Typography>
-        <Typography variant="h4" align="center">
+        <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} align="center">
           {subTitle}
         </Typography>
       </CardContent>

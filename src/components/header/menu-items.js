@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import React, { useState } from 'react';
-import { Button, Menu, MenuItem, Typography } from '@mui/material';
+import { Button, Menu, MenuItem, Typography, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -36,6 +37,8 @@ const MenuItems = ({ tabsNames, onChange }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const classes = useStyles();
+  const theme = useTheme();
+  const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -85,7 +88,13 @@ const MenuItems = ({ tabsNames, onChange }) => {
               handleClose();
             }}
           >
-            <Typography variant="h4" align='center' sx={{color: 'white'}}>{tabsName}</Typography>
+            <Typography
+              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+              align="center"
+              sx={{ color: 'white' }}
+            >
+              {tabsName}
+            </Typography>
           </MenuItem>
         ))}
       </Menu>

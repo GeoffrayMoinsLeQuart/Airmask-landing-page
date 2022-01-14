@@ -85,6 +85,14 @@ export default createTheme({
       fontSize: '1.125rem',
       lineHeight: '1.6875rem',
     },
+    h4Mobile: {
+      fontFamily: ['Rubik', 'sans-serif'].join(','),
+      color: 'rgba(255, 255, 255, 0.6)',
+      textTransform: 'none',
+      fontWeight: 500,
+      fontSize: '16px',
+      lineHeight: '24px',
+    },
     h5: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
       color: AirMaskWhite,

@@ -145,7 +145,10 @@ const Intro = ({ value }) => {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="h4" className={classes.elementGridSubtitle}>
+            <Typography
+              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+              className={classes.elementGridSubtitle}
+            >
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!
             </Typography>

@@ -139,12 +139,12 @@ const HowToStart = ({ value }) => {
             >
               How to start?
             </Typography>
-            <Typography variant={'h4'} className={classes.title}>
+            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} className={classes.title}>
               There are a lot of airdrops happening in the crypto sphere and
               millions of people have to spend a lot of time looking for them.
               We've created a simple tool that makes this process simpler.
             </Typography>
-            <Typography variant={'h4'} className={classes.title}>
+            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} className={classes.title}>
               This is real magic in the cryptocurrency world because AirMask
               only finds interesting airdrops.
             </Typography>
