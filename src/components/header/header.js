@@ -24,6 +24,7 @@ import download_icon from '../../assets/icons/download.svg';
 import menu_icon from '../../assets/icons/menu.svg'; 
 import close_menu_icon from '../../assets/icons/close_menu.svg'; 
 import MediaIcons from '../../common/media-icons';
+import MenuItems from './menu-items';
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -39,7 +40,7 @@ function ElevationScroll(props) {
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    zIndex: '1400 !important',
+    zIndex: '100 !important',
     backgroundColor: theme.palette.ternary.main + ' !important',
     paddingTop: '2.8125rem',
     paddingBottom: '2.8125rem',
@@ -180,7 +181,8 @@ const Header = ({value, setValue}) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesBelowXL = useMediaQuery(theme.breakpoints.down('xl'));
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -197,6 +199,10 @@ const Header = ({value, setValue}) => {
     setValue(newValue);
   };
 
+  const handleChangeButtonMenu = (newValue) => {
+    setValue(newValue);
+  };
+
   const handleClickMenu = () => {
     setValue('Home');
   };
@@ -210,18 +216,25 @@ const Header = ({value, setValue}) => {
 
   const tabs = (
     <>
-      <StyledTabs value={value} onChange={handleChange}>
-        {tabsNames &&
-          tabsNames.map((tabsName, index) => (
-            <StyledTab
-              label={tabsName}
-              {...a11yProps(index)}
-              key={index}
-              selected={value === index+1}
-              disableRipple
-            />
-          ))}
-      </StyledTabs>
+      {!matchesBelowXL && (
+        <StyledTabs value={value} onChange={handleChange}>
+          {tabsNames &&
+            tabsNames.map((tabsName, index) => (
+              <StyledTab
+                label={tabsName}
+                {...a11yProps(index)}
+                key={index}
+                selected={value === index + 1}
+                disableRipple
+              />
+            ))}
+        </StyledTabs>
+      )}
+
+      {matchesBelowXL && (
+        <MenuItems tabsNames={tabsNames} onChange={handleChangeButtonMenu} />
+      )}
+
       <MediaIcons
         designGrid={{
           xs: 'center',
@@ -264,7 +277,6 @@ const Header = ({value, setValue}) => {
                 onClick={() => {
                   setOpenDrawer(false);
                   setValue(index);
-                  console.log(index);
                 }}
                 sx={{
                   backgroundColor: 'transparent !important',
@@ -322,17 +334,17 @@ const Header = ({value, setValue}) => {
       <ElevationScroll>
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar disableGutters className={classes.toolbar}>
-            {matches && downloadButtonMobile}
+            {matchesBelowMD && downloadButtonMobile}
 
             <Button
               component={Link}
               disableRipple
               className={classes.buttonLogo}
-              onClick={ handleClickMenu }
+              onClick={handleClickMenu}
             >
               <img alt="companylogo" src={logo} className={classes.logo} />
             </Button>
-            {matches ? drawer : tabs}
+            {matchesBelowMD ? drawer : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>

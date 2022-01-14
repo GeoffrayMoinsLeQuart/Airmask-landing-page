@@ -4,12 +4,14 @@ import React, { useEffect } from 'react';
 import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 import { Typography, Grid, useTheme, useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import AboutAirmaskInNumbers from '../../assets/illustrations/airmask-in-numbers.svg';
+import AboutAirmaskInNumbersDesktop from '../../assets/illustrations/airmask-in-numbers.svg';
+import AboutAirmaskInNumbersMobile from '../../assets/illustrations/airmask-in-numbers2.svg';
 import CardAirmaskInNumber from './card-airmask-in-numbers';
 import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
+    position: 'relative',
     [theme.breakpoints.down('md')]: {
       paddingTop: '4.5rem',
       paddingBottom: '4.5rem',
@@ -40,13 +42,17 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '0.5rem',
   },
   image: {
-    paddingBottom: '1.5rem',
-    width: '100%',
-    height: '100%',
-    [theme.breakpoints.up('sm')]: {
+    '@media (max-width:456px)': {
+      maxHeight: '28rem !important',
+    },
+    [theme.breakpoints.down('md')]: {
       maxHeight: '30rem',
+      height: '100%',
+      right: '-1.5rem',
+      position: 'absolute',
     },
     [theme.breakpoints.up('md')]: {
+      paddingBottom: '1.5rem',
       maxHeight: '40rem',
     },
     [theme.breakpoints.up('lg')]: {
@@ -85,6 +91,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridText: {
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      height: '100%',
+      maxHeight: '30rem',
+      zIndex: '10',
+    },
     [theme.breakpoints.up('sm')]: {
       paddingLeft: '3rem',
     },
@@ -96,6 +108,7 @@ const AirmaskInNumber = ({ value }) => {
   const myRef = React.createRef();
   const theme = useTheme();
   const classes = useStyles();
+  const matchesBelowSM = useMediaQuery(theme.breakpoints.down('sm'));
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const offsetCalcul = ScrollToELement();
   const offsetCalcul2 = useIsMobile('number');
@@ -114,15 +127,39 @@ const AirmaskInNumber = ({ value }) => {
       justifyContent="space-between"
       className={classes.mainGrid}
     >
-      <Grid item xs={12} sm={6} md={6} className={classes.gridImage}>
+      {matchesBelowMD && (
         <img
-          alt={AboutAirmaskInNumbers}
-          src={AboutAirmaskInNumbers}
+          alt={
+              AboutAirmaskInNumbersMobile
+          }
+          src={
+              AboutAirmaskInNumbersMobile
+          }
           className={classes.image}
         />
-      </Grid>
+      )}
+      {!matchesBelowMD && (
+        <Grid item xs={12} sm={6} md={6} className={classes.gridImage}>
+          <img
+            alt={AboutAirmaskInNumbersDesktop}
+            src={AboutAirmaskInNumbersDesktop}
+            className={classes.image}
+          />
+        </Grid>
+      )}
       <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
-        <Grid container direction="column" alignContent="center">
+        <Grid
+          container
+          direction="column"
+          alignContent={{
+            xs: 'flex-start',
+            sm: 'flex-start',
+            md: 'flex-start',
+            lg: 'center',
+            xl: 'center',
+            xxl: 'center',
+          }}
+        >
           <Grid item>
             <Typography
               variant={matchesBelowMD ? 'h2' : 'h1'}
