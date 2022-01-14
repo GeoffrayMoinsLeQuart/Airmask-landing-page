@@ -8,19 +8,25 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
+    position: 'relative',
     [theme.breakpoints.up('xl')]: { height: '48rem' },
-
+    [theme.breakpoints.up('xxl')]: {
+      paddingTop: '8.5rem',
+      paddingBottom: '5.5rem',
+      maxWidth: '125rem',
+      margin: 'auto',
+    },
     [theme.breakpoints.down('xl')]: {
-      height: '75rem',
+      height: '68rem',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '65rem',
+      height: '61rem',
     },
     [theme.breakpoints.down('md')]: {
-      height: '51rem',
+      height: '48rem',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '45rem',
+      height: '42rem',
     },
   },
   gridText: {
@@ -50,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: '8.75rem',
       zIndex: 1,
       position: 'absolute',
-      left: 0,
-      top: 0,
+      left: 140,
+      top: -120,
     },
   },
   image: {
