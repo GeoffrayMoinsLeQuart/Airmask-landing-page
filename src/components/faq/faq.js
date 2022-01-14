@@ -13,6 +13,7 @@ import {
 import minus from '../../assets/icons/minus.svg';
 import plus from '../../assets/icons/plus.svg';
 import ButtonIcon from '../../common/button-icon';
+import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   accordion: {
@@ -42,6 +43,8 @@ const FAQ = ({ value }) => {
   const [openAccordeon3, setOpenAccordeon3] = useState(false);
   const myRef = React.createRef();
   const offsetCalcul = ScrollToELement();
+  const offsetCalcul2 = useIsMobile('faq');
+
   const theme = useTheme();
   const classes = useStyles();
 
@@ -85,7 +88,7 @@ const FAQ = ({ value }) => {
 
   useEffect(() => {
     if (value === 4) {
-      ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
+      ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
     }
   }, [value]);
 

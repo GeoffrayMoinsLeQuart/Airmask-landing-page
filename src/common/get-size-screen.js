@@ -40,5 +40,19 @@ export default function useIsMobile(page) {
     } else if (isXXLGScreen) {
       return 90;
     }
+  } else if (page === 'faq') {
+    if (isXSScreen && !isSMScreen) {
+      return -340;
+    } else if (isSMScreen && !isMDScreen) {
+      return -360;
+    } else if (isMDScreen && !isLGScreen) {
+      return -380;
+    } else if (isLGScreen && !isXLGScreen) {
+      return -400;
+    } else if (isXLGScreen && !isXXLGScreen) {
+      return -400;
+    } else if (isXXLGScreen) {
+      return -400;
+    }
   }
 }
