@@ -98,6 +98,25 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 'auto !important',
     margin: 'auto !important',
   },
+  buttonDownloadHeader: {
+    borderRadius: '2.5rem',
+    textTransform: 'none',
+    fontWeight: '600',
+    fontSize: '1rem',
+    minWidth: '10rem',
+    height: '3.75rem',
+    marginLeft: '50px',
+    backgroundColor: theme.palette.ternary.opacity10 + ' !important',
+    color: theme.palette.primary.main,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main + ' !important',
+      color: theme.palette.ternary.main,
+    },
+    '&:focus': {
+      backgroundColor: theme.palette.ternary.opacity60 + ' !important',
+      color: theme.palette.ternary.main,
+    },
+  },
 }));
 
 const StyledListItemText = styled(ListItemText)`
@@ -130,7 +149,7 @@ const StyledTab = styled(Tab)`
 `;
 
 const ButtonDownloadHeader = styled(Button)`
-  border-radius: 40px;
+  border-radius: 2.5rem;
   text-transform: none;
   font-weight: 600;
   font-size: 1rem;
@@ -150,7 +169,7 @@ const ButtonDownloadHeader = styled(Button)`
 `;
 
 const ButtonDownloadMobile = styled(Button)`
-  border-radius: 40px;
+  border-radius: 2.5rem;
   text-transform: none;
   font-weight: 600;
   font-size: 1rem;

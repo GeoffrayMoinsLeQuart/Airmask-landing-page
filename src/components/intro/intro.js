@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       height: '51rem',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '48rem',
+      height: '45rem',
     },
   },
   gridText: {
@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: '8.75rem',
       zIndex: 1,
       position: 'absolute',
-      left: '0px',
-      top: '0px',
+      left: 0,
+      top: 0,
     },
   },
   image: {

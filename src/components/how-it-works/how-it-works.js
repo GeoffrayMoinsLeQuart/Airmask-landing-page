@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '1rem',
   },
   image: {
-    maxHeight: '700px',
+    maxHeight: '43.75rem',
   },
   elementGridTitle: {
     paddingTop: '1rem',

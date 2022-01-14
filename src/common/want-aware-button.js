@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridTextField: {
     paddingRight: '3.125rem',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingRight: '0.625rem',
       paddingLeft: '0.625rem',
     },
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     width: '9.9206rem',
     height: '3.1994rem',
     borderRadius: '2.5rem !important',
-    [theme.breakpoints.down('sm')]: { width: '110px' },
+    [theme.breakpoints.down('sm')]: { width: '6.875rem' },
   },
 }));
 

@@ -8,6 +8,7 @@ import HowItWorks from './components/how-it-works';
 import Intro from './components/intro';
 import AirmaskInNumber from "./components/airmask-in-number";
 import Team from './components/team';
+import GetStarted from './components/get-started';
 import HowToStart from './components/how-to-start';
 import FAQ from './components/faq';
 
@@ -24,6 +25,7 @@ const [value, setValue] = useState(0);
         <AirmaskInNumber value={value} />
         <Team value={value} />
         <HowToStart value={value} />
+        <GetStarted />
         <FAQ value={value} />
       </StyledContainer>
       <Footer value={value} setValue={setValue} />

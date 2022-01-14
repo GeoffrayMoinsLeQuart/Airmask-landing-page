@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main + ' !important',
     width: '11.5rem',
     textTransform: 'none !important',
-    borderRadius: '0px',
+    borderRadius: 0,
     '&:hover': {
       opacity: '0.7',
     },
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.ternary.main + ' !important',
       color: theme.palette.primary.main + ' !important',
     },
-    borderRadius: '0px',
+    borderRadius: 0,
   },
   menuItem: {
     color: theme.palette.primary.main + ' !important',
