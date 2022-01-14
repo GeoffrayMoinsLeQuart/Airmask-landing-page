@@ -42,14 +42,23 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '0.5rem',
   },
   image: {
-    '@media (max-width:456px)': {
-      maxHeight: '28rem !important',
-    },
     [theme.breakpoints.down('md')]: {
       maxHeight: '30rem',
       height: '100%',
-      right: '-1.5rem',
       position: 'absolute',
+      right: 0,
+      top: '5.5rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '3.5rem',
+      maxHeight: '30rem',
+      height: '100%',
+      right: '-1.5rem',
+      bottom: '1.5rem',
+      position: 'absolute',
+    },
+    '@media (max-width:456px)': {
+      maxHeight: '28rem !important',
     },
     [theme.breakpoints.up('md')]: {
       paddingBottom: '1.5rem',
@@ -72,13 +81,13 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     [theme.breakpoints.down('sm')]: {
-      paddingBottom: '1rem',
+      paddingBottom: '3rem',
     },
     [theme.breakpoints.up('sm')]: {
-      paddingBottom: '1rem',
+      paddingBottom: '3rem',
     },
     [theme.breakpoints.up('md')]: {
-      paddingBottom: '1.5rem',
+      paddingBottom: '2rem',
     },
     [theme.breakpoints.up('lg')]: {
       paddingBottom: '2rem',
@@ -130,10 +139,14 @@ const AirmaskInNumber = ({ value }) => {
       {matchesBelowMD && (
         <img
           alt={
-              AboutAirmaskInNumbersMobile
+            matchesBelowSM
+              ? AboutAirmaskInNumbersMobile
+              : AboutAirmaskInNumbersDesktop
           }
           src={
-              AboutAirmaskInNumbersMobile
+            matchesBelowSM
+              ? AboutAirmaskInNumbersMobile
+              : AboutAirmaskInNumbersDesktop
           }
           className={classes.image}
         />

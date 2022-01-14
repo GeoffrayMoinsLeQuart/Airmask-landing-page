@@ -130,7 +130,7 @@ const StyledTab = styled(Tab)`
 `;
 
 const ButtonDownloadHeader = styled(Button)`
-  border-radius: 40px;
+  border-radius: 2.5rem;
   text-transform: none;
   font-weight: 600;
   font-size: 1rem;
@@ -150,7 +150,7 @@ const ButtonDownloadHeader = styled(Button)`
 `;
 
 const ButtonDownloadMobile = styled(Button)`
-  border-radius: 40px;
+  border-radius: 2.5rem;
   text-transform: none;
   font-weight: 600;
   font-size: 1rem;

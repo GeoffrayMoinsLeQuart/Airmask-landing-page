@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.ternary.opacity3,
     margin: 'auto',
     [theme.breakpoints.down('sm')]: {
-      height: '37.5rem',
+      height: '30.5rem',
       paddingRight: '1.5rem',
       paddingLeft: '1.5rem',
     },

@@ -8,8 +8,8 @@ const StyledButtonIcon = styled(IconButton)`
   margin-left: ${(props) => (props.marginleft ? props.marginleft : 'auto')};
   margin-right: ${(props) => (props.marginright ? props.marginright : 'auto')};
   background-color: ${theme.palette.ternary.opacity10};
-  height: 46px;
-  width: 46px;
+  height: 2.875rem;
+  width: 2.875rem;
 `;
 
 const ButtonIcon = ({
