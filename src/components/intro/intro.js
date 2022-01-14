@@ -9,7 +9,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
     [theme.breakpoints.up('xl')]: { height: '48rem' },
-    [theme.breakpoints.down('xl')]: { height: '75rem' },
+
+    [theme.breakpoints.down('xl')]: {
+      height: '75rem',
+    },
     [theme.breakpoints.down('lg')]: {
       height: '65rem',
     },

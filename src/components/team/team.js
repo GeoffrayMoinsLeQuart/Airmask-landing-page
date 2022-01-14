@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '2.5rem',
+      maxWidth: '125rem',
+      margin: 'auto',
     },
   },
   title: {

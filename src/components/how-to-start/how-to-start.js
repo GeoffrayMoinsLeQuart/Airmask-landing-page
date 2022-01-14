@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '8.5rem',
-      paddingBottom: '5.5rem !important',
+      paddingBottom: '5.5rem',
+      maxWidth: '125rem',
+      margin: 'auto',
     },
   },
   elementGridText: {

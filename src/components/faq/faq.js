@@ -16,6 +16,14 @@ import ButtonIcon from '../../common/button-icon';
 import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
+  mainDiv: {
+    [theme.breakpoints.up('xxl')]: {
+      paddingTop: '8.5rem',
+      paddingBottom: '5.5rem',
+      maxWidth: '125rem',
+      margin: 'auto',
+    },
+  },
   accordion: {
     backgroundColor: theme.palette.ternary.main + ' !important',
     paddingBottom: '1.5rem',
@@ -103,7 +111,7 @@ const FAQ = ({ value }) => {
   }
 
   return (
-    <div>
+    <div className={classes.mainDiv}>
       <Typography
         {...typographyProps}
         variant={matchesBelowMD ? 'h2' : 'h1'}

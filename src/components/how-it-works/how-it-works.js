@@ -10,6 +10,12 @@ import AutomaticParticipation from '../../assets/illustrations/automatic-partici
 import YouGetTokensOrNfts from '../../assets/illustrations/you-get-tokens-or-nfts.svg';
 
 const useStyles = makeStyles((theme) => ({
+  mainGrid: {
+    [theme.breakpoints.up('xxl')]: {
+      maxWidth: '125rem',
+      margin: 'auto',
+    },
+  },
   gridContainerBox: {
     [theme.breakpoints.up('md')]: {
       width: '100%',
@@ -61,7 +67,12 @@ const HowItWorks = ({ value }) => {
     }
   }, [value]);
   return (
-    <Grid ref={myRef} container justifyContent="space-between">
+    <Grid
+      ref={myRef}
+      container
+      justifyContent="space-between"
+      className={classes.mainGrid}
+    >
       <Grid item xs={12}>
         <Grid
           container

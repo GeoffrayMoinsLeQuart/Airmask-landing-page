@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
-import { Typography, Grid, useTheme, Button, autocompleteClasses } from '@mui/material';
+import React from 'react';
+import { Typography, Grid, useTheme, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import GetStartedIllustration from '../../assets/illustrations/get-started.svg';
 import GetStartedIllustrationMobile from '../../assets/illustrations/get-started2.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundColor: theme.palette.secondary.main + ' !important',
     marginBottom: '5rem',
+    [theme.breakpoints.up('xxl')]: {
+      maxWidth: '125rem',
+      margin: 'auto',
+    },
   },
   gridText: {
     [theme.breakpoints.down('md')]: {
@@ -85,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
 const GetStarted = ({ value }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesUpMD = useMediaQuery(theme.breakpoints.up('md'));
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const typographyProps = {
     align: matchesBelowMD ? 'center' : 'left',
