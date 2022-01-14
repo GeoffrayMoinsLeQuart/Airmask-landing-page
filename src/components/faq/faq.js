@@ -55,10 +55,8 @@ const FAQ = ({ value }) => {
   const faqs = [
     {
       label: 'Download AirMask',
-      description:
-        'AirMask is your no-hassle gateway to getting airdrop tokens without doing a thing.',
-      description1:
-        'Who doesn’t love Airdrops? Free tokens? Yes, please! But it takes so much work to find the good ones and subscribe. Signing up for airdrops is so ancient.',
+      description: `AirMask is your no-hassle gateway to getting airdrop tokens without doing a thing.`,
+      description1: `Who doesn’t love Airdrops? Free tokens? Yes, please! But it takes so much work to find the good ones and subscribe. Signing up for airdrops is so ancient.`,
       description2:
         'Enter AirMask – the non-custodial web wallet that does all the work for you, and automatically participates in token and NFT airdrops so that you can receive free tokens and NFT constantly without sweating over it!',
       icon: openAccordeon0,
