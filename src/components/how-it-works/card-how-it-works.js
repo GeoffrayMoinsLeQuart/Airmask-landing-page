@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import { Typography, Grid, useTheme } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Lottie from 'react-lottie';
 
 const useStyles = makeStyles((theme) => ({
   gridContainerBox: {
@@ -56,10 +57,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CardHowItWorks = ({ title, subTitle, image }) => {
+const CardHowItWorks = ({ title, subTitle, image, illustration }) => {
   const theme = useTheme();
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: illustration,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   return (
     <Grid item sm={12} md={6} className={classes.gridContainerBox}>
@@ -71,7 +80,8 @@ const CardHowItWorks = ({ title, subTitle, image }) => {
         className={classes.gridText}
       >
         <Grid item sm={6}>
-          <img alt={image} src={image} className={classes.image} />
+          <Lottie options={defaultOptions} />
+          {/* <img alt={image} src={image} className={classes.image} /> */}
         </Grid>
         <Grid item sm={2}>
           <Typography

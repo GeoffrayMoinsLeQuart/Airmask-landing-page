@@ -3,7 +3,9 @@ import React from 'react';
 import { Typography, Grid, useTheme, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import GetStartedIllustrationMobile from '../../assets/illustrations/get-started2.svg';
+import Lottie from 'react-lottie';
+import animationData from '../../assets/animation/get-started.json';
+
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -27,27 +29,35 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '20rem',
     },
     [theme.breakpoints.up('md')]: {
+      paddingTop: '1rem',
       paddingLeft: '3rem',
+      maxHeight: '18.75rem !important',
+    },
+    [theme.breakpoints.up('lg')]: {
+      maxHeight: '19.75rem !important',
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingTop: '2rem',
+      maxHeight: '20.75rem !important',
     },
   },
   image: {
+    margin: 'auto',
+    maxWidth: '40rem !important',
+    [theme.breakpoints.down('xxl')]: {
+      maxWidth: '35rem !important',
+    },
     [theme.breakpoints.down('xl')]: {
-      maxHeight: '18.75rem !important',
+      maxWidth: '30rem !important',
     },
     [theme.breakpoints.down('md')]: {
-      maxHeight: '15rem !important',
+      maxWidth: '30rem !important',
     },
     [theme.breakpoints.down('sm')]: {
-      maxHeight: '12rem !important',
-    },
-    '@media (max-width:356px)': {
-      maxHeight: '10rem !important',
-    },
-    '@media (max-width:300px)': {
-      maxHeight: '8rem !important',
+      maxWidth: '25rem !important',
     },
   },
-  buttonDownloadHeader: {
+  buttonGetStarted: {
     margin: 'auto !important',
     borderRadius: '2.5rem !important',
     textTransform: 'none !important',
@@ -97,6 +107,14 @@ const GetStarted = ({ value }) => {
   const typographyProps = {
     align: matchesBelowMD ? 'center' : 'left',
   };
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   return (
     <Grid
@@ -143,7 +161,7 @@ const GetStarted = ({ value }) => {
             >
               <Grid item>
                 <Button
-                  className={classes.buttonDownloadHeader}
+                  className={classes.buttonGetStarted}
                   variant="contained"
                   backgroundcolor="red"
                 >
@@ -161,12 +179,9 @@ const GetStarted = ({ value }) => {
           justifyContent="flex-start"
           alignItems="center"
           sx={{ height: '100%' }}
+          className={classes.image}
         >
-          <img
-            alt={GetStartedIllustrationMobile}
-            src={GetStartedIllustrationMobile}
-            className={classes.image}
-          />
+          <Lottie options={defaultOptions} />
         </Grid>
       </Grid>
     </Grid>

@@ -8,6 +8,9 @@ import CardHowItWorks from './card-how-it-works';
 import WeResearch from '../../assets/illustrations/we-research.svg';
 import AutomaticParticipation from '../../assets/illustrations/automatic-participation.svg';
 import YouGetTokensOrNfts from '../../assets/illustrations/you-get-tokens-or-nfts.svg';
+import automaticParticipationAnimation from '../../assets/animation/automatic-participation.json';
+import YouGetTokenAnimation from '../../assets/animation/you-get-tokens.json';
+import WeResearchAnimation from '../../assets/animation/we-research.json';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -138,6 +141,7 @@ const HowItWorks = ({ value }) => {
               subTitle="Airmask looks for new airdrops for you and analyzes which ones
                   will be the most profitable."
               image={AutomaticParticipation}
+              illustration={WeResearchAnimation}
             />
           )}
         </Grid>
@@ -147,12 +151,14 @@ const HowItWorks = ({ value }) => {
             title="Automatic participation"
             subTitle="You don't have to choose which airdrop to participate in. Our system will do it for you."
             image={AutomaticParticipation}
+            illustration={automaticParticipationAnimation}
           />
 
           <CardHowItWorks
             title="You get tokens or NTFs"
             subTitle="Becoming a crypto trader is easy! And you don't need to spend hours researching the market and building strategies."
             image={YouGetTokensOrNfts}
+            illustration={YouGetTokenAnimation}
           />
         </Grid>
       </Grid>
