@@ -7,7 +7,7 @@ import { makeStyles } from '@mui/styles';
 import GridHowToStart from './grid-how-to-start';
 import useIsMobile from '../../common/get-size-screen';
 import Lottie from 'react-lottie';
-import animationData from '../../assets/animation/how-to-start/how-to-start.json';
+import animationData from '../../assets/animation/how-to-start.json';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {

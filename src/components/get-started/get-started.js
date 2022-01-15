@@ -4,7 +4,7 @@ import { Typography, Grid, useTheme, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Lottie from 'react-lottie';
-import animationData from '../../assets/animation/get-started/get-started.json';
+import animationData from '../../assets/animation/get-started.json';
 
 
 const useStyles = makeStyles((theme) => ({
