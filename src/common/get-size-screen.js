@@ -42,11 +42,11 @@ export default function useIsMobile(page) {
     }
   } else if (page === 'faq') {
     if (isXSScreen && !isSMScreen) {
-      return -340;
+      return -400;
     } else if (isSMScreen && !isMDScreen) {
-      return -360;
+      return -250;
     } else if (isMDScreen && !isLGScreen) {
-      return -380;
+      return -360;
     } else if (isLGScreen && !isXLGScreen) {
       return -400;
     } else if (isXLGScreen && !isXXLGScreen) {
