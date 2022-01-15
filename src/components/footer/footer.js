@@ -80,32 +80,34 @@ const Footer = ({setValue}) => {
     setValue('Home');
   };
 
-  const StyledLink = ({ nameLink, value, type }) => {
+  const StyledLink = ({ nameLink, value, type, notHoverable = false }) => {
+    console.log(notHoverable);
     return (
       <Grid
         item
-        className={
-          type === 'overline'
-            ? classes.gridStyledLink
-            : null
-        }
+        className={type === 'overline' ? classes.gridStyledLink : null}
       >
         <ThemeProvider theme={themeTypoOver}>
-          <Button
-            disableRipple
-            onClick={() => (Number.isInteger(value) ? setValue(value) : false)}
-            sx={{
-              color: theme.palette.primary.main,
-              '&:hover': {
-                opacity: 0.7,
-              },
-              textTransform: 'none',
-            }}
-          >
-            <Typography  variant={type}>
-              {nameLink}
-            </Typography>
-          </Button>
+          {notHoverable && (
+              <Typography variant={type}>{nameLink}</Typography>
+          )}
+          {!notHoverable && (
+            <Button
+              disableRipple
+              onClick={() =>
+                Number.isInteger(value) ? setValue(value) : false
+              }
+              sx={{
+                color: theme.palette.primary.main,
+                '&:hover': {
+                  opacity: notHoverable ? 'none' : 0.7,
+                },
+                textTransform: 'none',
+              }}
+            >
+              <Typography variant={type}>{nameLink}</Typography>
+            </Button>
+          )}
         </ThemeProvider>
       </Grid>
     );
@@ -113,7 +115,7 @@ const Footer = ({setValue}) => {
 
   return (
     <footer className={classes.footer}>
-      <WantAwareButton/>
+      <WantAwareButton />
       <Grid container justifyContent="space-between">
         <Grid container justifyContent="space-between">
           <Grid container item xs={12} md={6} justifyContent={designGrid}>
@@ -172,9 +174,11 @@ const Footer = ({setValue}) => {
             order={{ xs: 2, sm: 2, md: 1 }}
           >
             <ThemeProvider theme={themeTypoSubtitle}>
-              <Typography variant="subtitle1" sx={{ opacity: 0.6 }}>
-                Copyright Ⓒ 2020 Airmask. All Rights Reserved
-              </Typography>
+              <StyledLink
+                type="subtitle1"
+                notHoverable
+                nameLink="Copyright Ⓒ 2020 Airmask. All Rights Reserved"
+              />
             </ThemeProvider>
           </Grid>
 
