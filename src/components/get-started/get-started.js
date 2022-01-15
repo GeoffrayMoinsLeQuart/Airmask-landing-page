@@ -3,7 +3,6 @@ import React from 'react';
 import { Typography, Grid, useTheme, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import GetStartedIllustrationMobile from '../../assets/illustrations/get-started2.svg';
 import Lottie from 'react-lottie';
 import animationData from '../../assets/animation/get-started/get-started.json';
 
@@ -182,12 +181,7 @@ const GetStarted = ({ value }) => {
           sx={{ height: '100%' }}
           className={classes.image}
         >
-          <Lottie options={defaultOptions}  />
-          {/* <img
-            alt={GetStartedIllustrationMobile}
-            src={GetStartedIllustrationMobile}
-            className={classes.image}
-          /> */}
+          <Lottie options={defaultOptions} />
         </Grid>
       </Grid>
     </Grid>

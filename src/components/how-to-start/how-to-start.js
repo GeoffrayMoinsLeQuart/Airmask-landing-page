@@ -4,9 +4,10 @@ import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-elemen
 import { Typography, Grid, useTheme } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
-import HowToStartIllustration from '../../assets/illustrations/how-to-start.svg';
 import GridHowToStart from './grid-how-to-start';
 import useIsMobile from '../../common/get-size-screen';
+import Lottie from 'react-lottie';
+import animationData from '../../assets/animation/how-to-start/how-to-start.json';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -35,31 +36,23 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     paddingBottom: '1.5rem',
+    marginLeft: 'auto',
     [theme.breakpoints.down('md')]: {
+      margin: 'auto',
       paddingTop: '3rem',
     },
     [theme.breakpoints.up('xs')]: {
-      maxHeight: '30rem',
+      maxWidth: '30rem',
     },
     [theme.breakpoints.up('sm')]: {
-      maxHeight: '40rem',
+      maxWidth: '40rem',
     },
     [theme.breakpoints.up('md')]: {
-      maxHeight: '40rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      maxHeight: '40rem',
-    },
-    [theme.breakpoints.up('xl')]: {
-      maxHeight: '60rem',
-    },
-    [theme.breakpoints.up('xxl')]: {
-      maxHeight: '70rem',
+      maxWidth: '30rem',
     },
   },
   gridImage: {
-    [theme.breakpoints.down('md')]: {
-    },
+    [theme.breakpoints.down('md')]: {},
   },
   title: {
     [theme.breakpoints.down('sm')]: {
@@ -90,6 +83,14 @@ const HowToStart = ({ value }) => {
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const offsetCalcul2 = useIsMobile('start');
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   useEffect(() => {
     if (value === 3) {
@@ -114,12 +115,12 @@ const HowToStart = ({ value }) => {
             >
               How to start?
             </Typography>
-            <Typography variant='h4' className={classes.title}>
+            <Typography variant="h4" className={classes.title}>
               There are a lot of airdrops happening in the crypto sphere and
               millions of people have to spend a lot of time looking for them.
               We've created a simple tool that makes this process simpler.
             </Typography>
-            <Typography variant='h4' className={classes.title}>
+            <Typography variant="h4" className={classes.title}>
               This is real magic in the cryptocurrency world because AirMask
               only finds interesting airdrops.
             </Typography>
@@ -139,12 +140,14 @@ const HowToStart = ({ value }) => {
             lg: 'flex-end',
             xl: 'flex-end',
           }}
+          className={classes.image}
         >
-          <img
+          <Lottie options={defaultOptions} />
+          {/* <img
             alt={HowToStartIllustration}
             src={HowToStartIllustration}
             className={classes.image}
-          />
+          /> */}
         </Grid>
       </Grid>
     </Grid>
