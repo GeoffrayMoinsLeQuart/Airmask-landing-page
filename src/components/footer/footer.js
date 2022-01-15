@@ -81,7 +81,6 @@ const Footer = ({setValue}) => {
   };
 
   const StyledLink = ({ nameLink, value, type, notHoverable = false }) => {
-    console.log(notHoverable);
     return (
       <Grid
         item
