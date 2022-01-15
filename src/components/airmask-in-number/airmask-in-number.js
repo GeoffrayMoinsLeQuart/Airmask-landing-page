@@ -9,6 +9,8 @@ import AboutAirmaskInNumbersMobile from '../../assets/illustrations/airmask-in-n
 import AboutAirmaskInNumbersMobile2 from '../../assets/illustrations/airmask-in-numbers3.svg';
 import CardAirmaskInNumber from './card-airmask-in-numbers';
 import useIsMobile from '../../common/get-size-screen';
+import Lottie from 'react-lottie';
+import WeResearchAnimation from '../../assets/animation/airmask-in-number.json';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -45,12 +47,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    [theme.breakpoints.down('md')]: {
-      maxHeight: '20rem',
-      height: '100%',
-      position: 'absolute',
-      right: 0,
-    },
     [theme.breakpoints.down('sm')]: {
       maxHeight: '25rem',
       height: '100%',
@@ -61,23 +57,22 @@ const useStyles = makeStyles((theme) => ({
     '@media (max-width:456px)': {
       maxHeight: '28rem !important',
     },
-    [theme.breakpoints.up('md')]: {
-      paddingBottom: '1.5rem',
-      maxHeight: '40rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      maxHeight: '50rem',
-    },
-    [theme.breakpoints.up('xl')]: {
-      maxHeight: '60rem',
-    },
-    [theme.breakpoints.up('xxl')]: {
-      maxHeight: '70rem',
-    },
   },
   gridImage: {
     [theme.breakpoints.down('md')]: {
+      maxHeight: '30rem',
+      height: '100%',
+      position: 'absolute',
+      right: 0,
+    },
+    [theme.breakpoints.down('xl')]: {
+      maxWidth: '30rem !important',
+    },
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
+    },
+    [theme.breakpoints.up('xxl')]: {
+      maxWidth: '50rem !important',
     },
   },
   title: {
@@ -133,6 +128,14 @@ const AirmaskInNumber = ({ value }) => {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
     }
   }, [value]);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: WeResearchAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   return (
     <>
@@ -158,28 +161,21 @@ const AirmaskInNumber = ({ value }) => {
         justifyContent="space-between"
         className={classes.mainGrid}
       >
-        {matchesBelowMD && (
-          <img
-            alt={
-              matchesBelowSM
-                ? AboutAirmaskInNumbersMobile
-                : AboutAirmaskInNumbersMobile2
-            }
-            src={
-              matchesBelowSM
-                ? AboutAirmaskInNumbersMobile
-                : AboutAirmaskInNumbersMobile2
-            }
-            className={classes.image}
-          />
-        )}
-        {!matchesBelowMD && (
-          <Grid item xs={12} sm={6} md={6} className={classes.gridImage}>
+        {matchesBelowMD &&
+          (matchesBelowSM ? (
             <img
-              alt={AboutAirmaskInNumbersDesktop}
-              src={AboutAirmaskInNumbersDesktop}
+              alt={AboutAirmaskInNumbersMobile}
+              src={AboutAirmaskInNumbersMobile}
               className={classes.image}
             />
+          ) : (
+            <Grid item xs={12} sm={6} md={6} className={classes.gridImage}>
+              <Lottie options={defaultOptions} />
+            </Grid>
+          ))}
+        {!matchesBelowMD && (
+          <Grid item xs={12} sm={6} md={6} className={classes.gridImage}>
+            <Lottie options={defaultOptions} />
           </Grid>
         )}
         <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
