@@ -40,7 +40,7 @@ function ElevationScroll(props) {
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    zIndex: '100 !important',
+    zIndex: '1400 !important',
     backgroundColor: theme.palette.ternary.main + ' !important',
     paddingTop: '2.8125rem',
     paddingBottom: '2.8125rem',

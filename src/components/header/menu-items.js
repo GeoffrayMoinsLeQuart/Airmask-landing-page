@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
   },
+  menuDesign: {
+    zIndex: '1400 !important',
+  },
 }));
 
 const MenuItems = ({ tabsNames, onChange }) => {
@@ -68,7 +71,7 @@ const MenuItems = ({ tabsNames, onChange }) => {
       </Button>
       <Menu
         id="demo-customized-menu"
-        // className={classes.menu}
+        className={classes.menuDesign}
         classes={{ paper: classes.menu }}
         MenuListProps={{
           'aria-labelledby': 'demo-customized-button',
