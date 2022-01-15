@@ -33,18 +33,8 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: '4.5rem',
     },
   },
-  elementGridText: {
-    [theme.breakpoints.up('xxl')]: {
-      height: '67rem !important',
-      width: '52rem !important',
-    },
-    paddingTop: '0.5rem',
-    paddingBottom: '0.5rem',
-  },
   image: {
     paddingBottom: '1.5rem',
-    // width: '100%',
-    // height: '100%',
     [theme.breakpoints.down('md')]: {
       paddingTop: '3rem',
     },
@@ -69,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
   },
   gridImage: {
     [theme.breakpoints.down('md')]: {
-      // display: 'none',
     },
   },
   title: {
@@ -90,11 +79,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xxl')]: {
       paddingBottom: '3.25rem',
-    },
-  },
-  gridText: {
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: '3rem',
     },
   },
 }));
@@ -121,7 +105,7 @@ const HowToStart = ({ value }) => {
       justifyContent="space-between"
       className={classes.mainGrid}
     >
-      <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
+      <Grid item xs={12} sm={12} md={6}>
         <Grid container direction="column">
           <Grid item>
             <Typography
@@ -130,12 +114,12 @@ const HowToStart = ({ value }) => {
             >
               How to start?
             </Typography>
-            <Typography variant={'h4'} className={classes.title}>
+            <Typography variant='h4' className={classes.title}>
               There are a lot of airdrops happening in the crypto sphere and
               millions of people have to spend a lot of time looking for them.
               We've created a simple tool that makes this process simpler.
             </Typography>
-            <Typography variant={'h4'} className={classes.title}>
+            <Typography variant='h4' className={classes.title}>
               This is real magic in the cryptocurrency world because AirMask
               only finds interesting airdrops.
             </Typography>

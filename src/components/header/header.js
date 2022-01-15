@@ -85,9 +85,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between !important',
     [theme.breakpoints.down('md')]: { paddingLeft: '0 !important' },
   },
-  drawerIcon: {
-    color: theme.palette.primary.main,
-  },
   drawer: {
     zIndex: 1200,
     backgroundColor: theme.palette.ternary.main + ' !important',
@@ -99,22 +96,22 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto !important',
   },
   buttonDownloadHeader: {
-    borderRadius: '2.5rem',
-    textTransform: 'none',
-    fontWeight: '600',
-    fontSize: '1rem',
-    minWidth: '10rem',
-    height: '3.75rem',
-    marginLeft: '50px',
+    borderRadius: '2.5rem !important',
+    textTransform: 'none !important',
+    fontWeight: '600 !important',
+    fontSize: '1rem !important',
+    minWidth: '10rem !important',
+    height: '3.75rem !important',
+    marginLeft: '50px !important',
     backgroundColor: theme.palette.ternary.opacity10 + ' !important',
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.main + ' !important',
     '&:hover': {
       backgroundColor: theme.palette.primary.main + ' !important',
-      color: theme.palette.ternary.main,
+      color: theme.palette.ternary.main + ' !important',
     },
     '&:focus': {
       backgroundColor: theme.palette.ternary.opacity60 + ' !important',
-      color: theme.palette.ternary.main,
+      color: theme.palette.ternary.main + ' !important',
     },
   },
 }));
@@ -145,26 +142,6 @@ const StyledTab = styled(Tab)`
   color: ${theme.palette.primary.main};
   &:hover {
     opacity: 0.7;
-  }
-`;
-
-const ButtonDownloadHeader = styled(Button)`
-  border-radius: 2.5rem;
-  text-transform: none;
-  font-weight: 600;
-  font-size: 1rem;
-  min-width: 10rem;
-  height: 3.75rem;
-  margin-left: 50px;
-  background-color: ${theme.palette.ternary.opacity10};
-  color: ${theme.palette.primary.main};
-  &:hover {
-    background-color: ${theme.palette.primary.main};
-    color: ${theme.palette.ternary.main};
-  }
-  &:focus {
-    background-color: ${theme.palette.ternary.opacity60};
-    color: ${theme.palette.ternary.main};
   }
 `;
 
@@ -264,9 +241,13 @@ const Header = ({value, setValue}) => {
         }}
       />
 
-      <ButtonDownloadHeader variant="contained" backgroundcolor="red">
+      <Button
+        variant="contained"
+        backgroundcolor="red"
+        className={classes.buttonDownloadHeader}
+      >
         Download now
-      </ButtonDownloadHeader>
+      </Button>
     </>
   );
 

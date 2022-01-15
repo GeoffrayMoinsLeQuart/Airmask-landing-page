@@ -82,9 +82,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '1rem',
     paddingBottom: '1rem',
   },
-  elementGridSubtitle: {
-    paddingBottom: '2rem',
-  },
 }));
 
 const Intro = ({ value }) => {

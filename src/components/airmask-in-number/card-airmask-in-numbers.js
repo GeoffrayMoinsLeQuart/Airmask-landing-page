@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '0.3rem',
     paddingBottom: '0.3rem',
   },
-  GridText: {
+  gridText: {
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
@@ -54,7 +54,7 @@ const CardAirmaskInNumber = ({ title, subTitle, text }) => {
             {subTitle}
           </Typography>
         </Grid>
-        <Grid item className={classes.GridText}>
+        <Grid item className={classes.gridText}>
           <Typography variant={matchesBelowMD ? 'body1' : 'h4'} className={classes.elementGridText}>
             {text}
           </Typography>

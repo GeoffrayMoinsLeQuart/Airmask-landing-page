@@ -12,26 +12,22 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     backgroundColor: theme.palette.ternary.main,
     paddingBottom: '5rem',
-    paddingTop: '10.3925rem',
+    paddingTop: '6.3925rem',
     paddingLeft: '8.75rem',
     paddingRight: '8.75rem',
     [theme.breakpoints.down('lg')]: {
       paddingBottom: '5rem',
-      paddingTop: '10.3925rem',
+      paddingTop: '6.3925rem',
       paddingRight: '2.5rem',
       paddingLeft: '2.5rem',
     },
     [theme.breakpoints.down('md')]: {
       minWidth: '100% !important',
-      paddingTop: '7.8681rem',
+      paddingTop: '5.8681rem',
       paddingBottom: '2rem',
       paddingRight: '1.25rem',
       paddingLeft: '1.25rem',
     },
-  },
-  buttonLogo: {
-    backgroundColor: 'transparent !important',
-    padding: '0 !important',
   },
   logo: {
     [theme.breakpoints.up('md')]: {
@@ -91,7 +87,7 @@ const Footer = ({setValue}) => {
         className={
           type === 'overline'
             ? classes.gridStyledLink
-            : classes.gridStyledLinkLast
+            : null
         }
       >
         <ThemeProvider theme={themeTypoOver}>

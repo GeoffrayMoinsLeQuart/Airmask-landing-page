@@ -44,14 +44,6 @@ const useStyles = makeStyles((theme) => ({
       display: 'none !important',
     },
   },
-  elementGridText: {
-    [theme.breakpoints.up('xxl')]: {
-      height: '67rem !important',
-      width: '52rem !important',
-    },
-    paddingTop: '0.5rem',
-    paddingBottom: '0.5rem',
-  },
   image: {
     [theme.breakpoints.down('md')]: {
       maxHeight: '20rem',

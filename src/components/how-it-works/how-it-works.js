@@ -34,10 +34,6 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '3rem',
     },
   },
-  elementGridText: {
-    paddingTop: '1rem',
-    paddingBottom: '1rem',
-  },
   image: {
     maxHeight: '43.75rem',
   },
