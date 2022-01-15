@@ -75,7 +75,7 @@ const CardHowItWorks = ({ title, subTitle, image }) => {
         </Grid>
         <Grid item sm={2}>
           <Typography
-            variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
+            variant={matchesBelowMD ? 'body2' : 'h2'}
             className={classes.elementGridText}
             align="center"
           >
@@ -84,7 +84,7 @@ const CardHowItWorks = ({ title, subTitle, image }) => {
         </Grid>
         <Grid item sm={2}>
           <Typography
-            variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+            variant={matchesBelowMD ? 'body1' : 'h4'}
             className={classes.elementGridText}
             align="center"
           >

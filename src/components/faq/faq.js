@@ -114,7 +114,7 @@ const FAQ = ({ value }) => {
     <div className={classes.mainDiv}>
       <Typography
         {...typographyProps}
-        variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+        variant={matchesBelowMD ? 'subtitle2' : 'h1'}
         className={classes.title}
       >
         FAQ
@@ -135,15 +135,15 @@ const FAQ = ({ value }) => {
             id="panel1a-header"
             className={classes.accordionSummary}
           >
-            <Typography variant="h5">{faq.label}</Typography>
+            <Typography variant="h3">{faq.label}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description}</Typography>
+            <Typography variant={matchesBelowMD ? 'body1' : 'h4'}>{faq.description}</Typography>
             {faq.description1 && (
-              <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description1}</Typography>
+              <Typography variant={matchesBelowMD ? 'body1' : 'h4'}>{faq.description1}</Typography>
             )}
             {faq.description2 && (
-              <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'}>{faq.description2}</Typography>
+              <Typography variant={matchesBelowMD ? 'body1' : 'h4'}>{faq.description2}</Typography>
             )}
           </AccordionDetails>
         </Accordion>

@@ -70,13 +70,13 @@ const Team = ({ value }) => {
             className={classes.gridTitle}
           >
             <Typography
-              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+              variant={matchesBelowMD ? 'subtitle2' : 'h1'}
               className={classes.title}
             >
               Meet our team
             </Typography>
             <Typography
-              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+              variant={matchesBelowMD ? 'body1' : 'h4'}
               className={classes.subtitle}
               {...typographyProps}
             >

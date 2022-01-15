@@ -69,7 +69,7 @@ const WantAwareButton = ({ children }) => {
     // This is equivalent to theme.breakpoints.down("md")
     const typographyProps = {
       align: matchesBelowLG ? 'center' : 'left',
-      variant: matchesBelowMD ? 'h2Mobile' : matchesBelowXL ? 'h3' : 'h2',
+      variant: matchesBelowMD ? 'body2' : matchesBelowXL ? 'h3' : 'h2',
     };
     return <Typography {...typographyProps}>{children}</Typography>;
   }
@@ -99,7 +99,7 @@ const WantAwareButton = ({ children }) => {
           height: '100%',
         }}
       >
-        <Grid item sx={{}} className={classes.gridTypography}>
+        <Grid item className={classes.gridTypography}>
           <ResponsiveTypography>
             Want to be aware of all the updates?
           </ResponsiveTypography>

@@ -116,16 +116,15 @@ const GetStarted = ({ value }) => {
           <Grid item className={classes.gridTitle}>
             <Typography
               {...typographyProps}
-              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+              variant={matchesBelowMD ? 'subtitle2' : 'h1'}
               className={classes.title}
             >
               Get Started
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item className={classes.subtitle}>
             <Typography
-              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
-              className={classes.subtitle}
+              variant={matchesBelowMD ? 'body1' : 'h4'}
               {...typographyProps}
             >
               Airmask is a non-custodian wallet that helps you find the best

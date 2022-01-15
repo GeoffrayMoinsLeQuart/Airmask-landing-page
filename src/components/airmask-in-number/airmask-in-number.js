@@ -153,7 +153,7 @@ const AirmaskInNumber = ({ value }) => {
         <Grid item>
           <Typography
             {...typographyProps}
-            variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+            variant={matchesBelowMD ? 'subtitle2' : 'h1'}
           >
             Airmask in numbers
           </Typography>
@@ -205,7 +205,7 @@ const AirmaskInNumber = ({ value }) => {
           >
             <Grid item>
               <Typography
-                variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+                variant={matchesBelowMD ? 'subtitle2' : 'h1'}
                 className={classes.title}
               >
                 Airmask in numbers

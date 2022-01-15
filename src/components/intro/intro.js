@@ -23,10 +23,13 @@ const useStyles = makeStyles((theme) => ({
       height: '61rem',
     },
     [theme.breakpoints.down('md')]: {
-      height: '48rem',
+      height: '42rem',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '42rem',
+      height: '38rem',
+    },
+    '@media (max-width:456px)': {
+      height: '36rem',
     },
   },
   gridText: {
@@ -38,10 +41,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridImage: {
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '25rem',
-      maxHeight: '25rem',
-    },
     [theme.breakpoints.up('sm')]: {
       width: '30rem',
       height: '30rem',
@@ -94,7 +93,10 @@ const Intro = ({ value }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
-
+  const matchesBelowXL = useMediaQuery(theme.breakpoints.down('xl'));
+    const typographyProps = {
+      align: matchesBelowXL ? 'center' : 'left',
+    };
   useEffect(() => {
     if (value === 'Home') {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul);
@@ -138,16 +140,17 @@ const Intro = ({ value }) => {
         >
           <Grid item>
             <Typography
-              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+              variant={matchesBelowMD ? 'subtitle2' : 'h1'}
               className={classes.elementGridTitle}
-            >
+              {...typographyProps}
+              >
               Get airdrops at the speed of light
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item >
             <Typography
-              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
-              className={classes.elementGridSubtitle}
+              variant={matchesBelowMD ? 'body1' : 'h4'}
+              {...typographyProps}
             >
               The first version of AirMask is ready to use. Start to earning
               tokens right now. Come and get it!

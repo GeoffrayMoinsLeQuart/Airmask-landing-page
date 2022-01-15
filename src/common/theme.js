@@ -45,7 +45,7 @@ export default createTheme({
       fontSize: '4rem',
       lineHeight: '6rem',
     },
-    h1Mobile: {
+    subtitle2: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
       color: AirMaskWhite,
       textTransform: 'none',
@@ -61,7 +61,7 @@ export default createTheme({
       fontSize: '2.25rem',
       lineHeight: '3.375rem',
     },
-    h2Mobile: {
+    body2: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
       color: AirMaskWhite,
       textTransform: 'none',
@@ -85,7 +85,7 @@ export default createTheme({
       fontSize: '1.125rem',
       lineHeight: '1.6875rem',
     },
-    h4Mobile: {
+    body1: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
       color: 'rgba(255, 255, 255, 0.6)',
       textTransform: 'none',

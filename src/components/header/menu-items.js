@@ -89,7 +89,7 @@ const MenuItems = ({ tabsNames, onChange }) => {
             }}
           >
             <Typography
-              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+              variant={matchesBelowMD ? 'body1' : 'h4'}
               align="center"
               sx={{ color: 'white' }}
             >

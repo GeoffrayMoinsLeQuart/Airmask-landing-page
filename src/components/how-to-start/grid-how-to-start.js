@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     height: '1.2rem',
     borderRadius: '50%',
   },
-  gridSize: {
-    height: 'calc(100% - 4rem) !important',
-  },
   line: {
     backgroundColor: 'none',
     width: '0rem',
@@ -20,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
     borderTop: '0',
     borderBottom: '0',
     height: '100%',
-  },
-  titleTimelineElement: {
   },
 }));
 
@@ -87,18 +82,20 @@ const GridHowToStart = () => {
           </Grid>
           <Grid item xs={1}></Grid>
           <Grid item xs={10}>
-            <Typography
-              variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
-              className={classes.titleTimelineElement}
-            >
-              {step.label}
-            </Typography>
-            <Typography
-              variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
-              className={classes.textTimelineElement}
-            >
-              {step.description}
-            </Typography>
+            <Grid container direction='column'>
+              <Grid item >
+                <Typography variant={matchesBelowMD ? 'body2' : 'h2'}>
+                  {step.label}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant={matchesBelowMD ? 'body1' : 'h4'}
+                >
+                  {step.description}
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       ))}

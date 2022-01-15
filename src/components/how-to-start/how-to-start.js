@@ -1,35 +1,36 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { Typography, Grid, useTheme, useMediaQuery } from '@mui/material';
+import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
+import { Typography, Grid, useTheme } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
 import HowToStartIllustration from '../../assets/illustrations/how-to-start.svg';
 import GridHowToStart from './grid-how-to-start';
-import { ScrollToELement, ScrollToELement2 } from '../../common/scroll-to-element';
 import useIsMobile from '../../common/get-size-screen';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
+    maxWidth: '125rem',
+    margin: 'auto',
     [theme.breakpoints.down('md')]: {
       paddingTop: '4.5rem',
       paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('md')]: {
       paddingTop: '4.5rem',
-      paddingBottom: '5.5rem !important',
+      paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('lg')]: {
       paddingTop: '5.5rem',
-      paddingBottom: '5.5rem !important',
+      paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('xl')]: {
       paddingTop: '6.5rem',
-      paddingBottom: '5.5rem !important',
+      paddingBottom: '4.5rem',
     },
     [theme.breakpoints.up('xxl')]: {
       paddingTop: '8.5rem',
-      paddingBottom: '5.5rem',
-      maxWidth: '125rem',
-      margin: 'auto',
+      paddingBottom: '4.5rem',
     },
   },
   elementGridText: {
@@ -42,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     paddingBottom: '1.5rem',
+    // width: '100%',
+    // height: '100%',
     [theme.breakpoints.down('md')]: {
       paddingTop: '3rem',
     },
@@ -65,9 +68,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridImage: {
-    height: '100% !important',
-    [theme.breakpoints.up('md')]: {
-      paddingTop: '6.5rem',
+    [theme.breakpoints.down('md')]: {
+      // display: 'none',
     },
   },
   title: {
@@ -95,14 +97,6 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '3rem',
     },
   },
-  gridTextTitle: {
-    [theme.breakpoints.down('md')]: {
-      paddingBottom: '3.25rem',
-    },
-    [theme.breakpoints.up('md')]: {
-      paddingBottom: '1.25rem',
-    },
-  },
 }));
 
 const HowToStart = ({ value }) => {
@@ -112,9 +106,7 @@ const HowToStart = ({ value }) => {
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const offsetCalcul2 = useIsMobile('start');
-  const typographyProps = {
-    align: matchesBelowMD ? 'center' : 'left',
-  };
+
   useEffect(() => {
     if (value === 3) {
       ScrollToELement2(myRef.current.offsetTop - offsetCalcul + offsetCalcul2);
@@ -131,20 +123,19 @@ const HowToStart = ({ value }) => {
     >
       <Grid item xs={12} sm={12} md={6} className={classes.gridText}>
         <Grid container direction="column">
-          <Grid item className={classes.gridTextTitle}>
+          <Grid item>
             <Typography
-              variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+              variant={matchesBelowMD ? 'subtitle2' : 'h1'}
               className={classes.title}
-              {...typographyProps}
             >
               How to start?
             </Typography>
-            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} className={classes.title}>
+            <Typography variant={'h4'} className={classes.title}>
               There are a lot of airdrops happening in the crypto sphere and
               millions of people have to spend a lot of time looking for them.
               We've created a simple tool that makes this process simpler.
             </Typography>
-            <Typography variant={matchesBelowMD ? 'h4Mobile' : 'h4'} className={classes.title}>
+            <Typography variant={'h4'} className={classes.title}>
               This is real magic in the cryptocurrency world because AirMask
               only finds interesting airdrops.
             </Typography>
@@ -154,7 +145,7 @@ const HowToStart = ({ value }) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={12} md={6}>
+      <Grid item xs={12} sm={12} md={6} className={classes.gridImage}>
         <Grid
           container
           justifyContent={{
@@ -164,14 +155,6 @@ const HowToStart = ({ value }) => {
             lg: 'flex-end',
             xl: 'flex-end',
           }}
-          alignContent={{
-            xs: 'center',
-            sm: 'center',
-            md: 'center',
-            lg: 'center',
-            xl: 'center',
-          }}
-          className={classes.gridImage}
         >
           <img
             alt={HowToStartIllustration}

@@ -14,7 +14,7 @@ export default function useIsMobile(page) {
 
   if (page === 'number') {
     if (isXSScreen && !isSMScreen) {
-      return 72;
+      return -100;
     } else if (isSMScreen && !isMDScreen) {
       return 50;
     } else if (isMDScreen && !isLGScreen) {

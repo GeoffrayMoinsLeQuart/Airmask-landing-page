@@ -82,13 +82,13 @@ const HowItWorks = ({ value }) => {
           className={classes.gridTitle}
         >
           <Typography
-            variant={matchesBelowMD ? 'h1Mobile' : 'h1'}
+            variant={matchesBelowMD ? 'subtitle2' : 'h1'}
             className={classes.title}
           >
             How does Airmask work?
           </Typography>
           <Typography
-            variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+            variant={matchesBelowMD ? 'body1' : 'h4'}
             className={classes.subtitle}
             {...typographyProps}
           >
@@ -119,14 +119,14 @@ const HowItWorks = ({ value }) => {
                   className={classes.image}
                 />
                 <Typography
-                  variant={matchesBelowMD ? 'h2Mobile' : 'h2'}
+                  variant={matchesBelowMD ? 'body2' : 'h2'}
                   className={classes.elementGridTitle}
                   align="left"
                 >
                   We research
                 </Typography>
                 <Typography
-                  variant={matchesBelowMD ? 'h4Mobile' : 'h4'}
+                  variant={matchesBelowMD ? 'body1' : 'h4'}
                   className={classes.elementGridSubtitle}
                   align="left"
                 >
