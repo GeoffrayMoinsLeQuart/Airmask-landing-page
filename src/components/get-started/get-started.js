@@ -163,7 +163,6 @@ const GetStarted = ({ value }) => {
                 <Button
                   className={classes.buttonGetStarted}
                   variant="contained"
-                  backgroundcolor="red"
                 >
                   Get Started
                 </Button>

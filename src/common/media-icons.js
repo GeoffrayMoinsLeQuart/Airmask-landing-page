@@ -9,12 +9,8 @@ const useStyles = makeStyles((theme) => ({
     right: '1.5em',
     minWidth: '10rem',
     [theme.breakpoints.down('md')]: {
-      right: '0.6em',
+      marginTop: '0 !important',
     },
-  },
-  gridIcon: {
-    // backgroundColor: 'red',
-    // paddingTop: '0',
   },
   icon: {
     height: '1.2rem',

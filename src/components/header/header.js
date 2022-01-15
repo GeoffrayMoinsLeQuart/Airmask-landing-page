@@ -121,6 +121,7 @@ const StyledListItemText = styled(ListItemText)`
   font-weight: 500;
   font-size: 1.375rem;
   min-width: 5rem;
+  text-align: center;
   color: ${theme.palette.primary.main};
   &:hover {
     opacity: 0.7;
@@ -131,9 +132,9 @@ const StyledTabs = styled(Tabs)`
   & .MuiTabs-indicator {
     background-color: transparent;
   }
-`;
+  `;
   
-const StyledTab = styled(Tab)`
+  const StyledTab = styled(Tab)`
   text-transform: none;
   font-weight: 400;
   font-size: 1rem;
@@ -157,10 +158,6 @@ const ButtonDownloadMobile = styled(Button)`
   height: 3.75rem;
   background-color: ${theme.palette.ternary.opacity10};
   color: ${theme.palette.primary.main};
-
-  @media (max-width: ${theme.breakpoints.values.sm}px) {
-    background-color: red !important;
-  }
 
   &:hover {
     background-color: ${theme.palette.primary.main};
@@ -243,7 +240,6 @@ const Header = ({value, setValue}) => {
 
       <Button
         variant="contained"
-        backgroundcolor="red"
         className={classes.buttonDownloadHeader}
       >
         Download now
@@ -302,7 +298,7 @@ const Header = ({value, setValue}) => {
             }}
           />
         </List>
-        <ButtonDownloadMobile variant="contained" backgroundcolor="red">
+        <ButtonDownloadMobile variant="contained">
           Download now
         </ButtonDownloadMobile>
       </SwipeableDrawer>
