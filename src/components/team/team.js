@@ -8,7 +8,8 @@ import {
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles } from '@mui/styles';
-import TeamMember from '../../assets/images/team-member.svg';
+import TeamMember from '../../assets/images/profile.svg';
+// import TeamMember from '../../assets/images/team-member.svg';
 import CardTeam from './card-team'
 
 const useStyles = makeStyles((theme) => ({
@@ -93,13 +94,13 @@ const Team = ({ value }) => {
               image={TeamMember}
             />
             <CardTeam
-              title="Geoffray Atlan"
-              subTitle="Front-end developer"
+              title="Pransky"
+              subTitle="Advisor"
               image={TeamMember}
             />
             <CardTeam
-              title="Geoffray Atlan"
-              subTitle="Front-end developer"
+              title="Elon Musk"
+              subTitle="Degen Chiller"
               image={TeamMember}
             />
           </Grid>
