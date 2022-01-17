@@ -86,18 +86,18 @@ const Team = ({ value }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item sx={{ margin: 'auto' }}>
-          <Grid container justifyContent="center">
+        <Grid item xs={12} sx={{ width: '100%' }}>
+          <Grid
+            container
+            justifyContent={{ sm: 'center', md: 'space-between' }}
+            sx={{ width: '80%', margin: 'auto' }}
+          >
             <CardTeam
               title="Geoffray Atlan"
               subTitle="Front-end developer"
               image={TeamMember}
             />
-            <CardTeam
-              title="Pransky"
-              subTitle="Advisor"
-              image={TeamMember}
-            />
+            <CardTeam title="Pransky" subTitle="Advisor" image={TeamMember} />
             <CardTeam
               title="Elon Musk"
               subTitle="Degen Chiller"

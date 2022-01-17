@@ -47,6 +47,12 @@ const useStyles = makeStyles((theme) => ({
   elementGridSubtitle: {
     paddingBottom: '2rem',
   },
+  gridTextTop: {
+    backgroundColor: theme.palette.ternary.opacity3,
+    paddingLeft: '2.5rem',
+    paddingRight: '1.5rem',
+    borderRadius: '2rem',
+  },
 }));
 
 const HowItWorks = ({ value }) => {
@@ -110,7 +116,7 @@ const HowItWorks = ({ value }) => {
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
-                className={classes.gridText}
+                className={classes.gridTextTop}
               >
                 <img
                   alt={WeResearch}
@@ -146,8 +152,12 @@ const HowItWorks = ({ value }) => {
           )}
         </Grid>
 
-        <Grid container className={classes.gridText}>
+        <Grid
+          container
+          className={classes.gridText}
+        >
           <CardHowItWorks
+            direction="left"
             title="Automatic participation"
             subTitle="You don't have to choose which airdrop to participate in. Our system will do it for you."
             image={AutomaticParticipation}
@@ -155,6 +165,7 @@ const HowItWorks = ({ value }) => {
           />
 
           <CardHowItWorks
+            direction="right"
             title="You get tokens or NTFs"
             subTitle="Becoming a crypto trader is easy! And you don't need to spend hours researching the market and building strategies."
             image={YouGetTokensOrNfts}

@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'transparent !important',
     justifyContent: 'space-between !important',
     [theme.breakpoints.down('md')]: { paddingLeft: '0 !important' },
+    [theme.breakpoints.up('md')]: { paddingRight: '50px !important' },
   },
   drawer: {
     zIndex: 1200,
@@ -114,6 +115,23 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.ternary.main + ' !important',
     },
   },
+  tab: {
+    textTransform: 'none  !important',
+    fontWeight: 400 + ' !important',
+    fontSize: '1rem  !important',
+    minWidth: '5rem  !important',
+    color: theme.palette.primary.main + ' !important',
+    '&:hover': {
+      opacity: 0.7,
+    },
+  },
+  tabs: {
+    marginRight: '15px',
+    marginLeft: '15px',
+    '& .MuiTabs-indicator': {
+      backgroundColor: 'transparent',
+    },
+  },
 }));
 
 const StyledListItemText = styled(ListItemText)`
@@ -122,24 +140,6 @@ const StyledListItemText = styled(ListItemText)`
   font-size: 1.375rem;
   min-width: 5rem;
   text-align: center;
-  color: ${theme.palette.primary.main};
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
-const StyledTabs = styled(Tabs)`
-  & .MuiTabs-indicator {
-    background-color: transparent;
-  }
-  `;
-  
-  const StyledTab = styled(Tab)`
-  text-transform: none;
-  font-weight: 400;
-  font-size: 1rem;
-  min-width: 5rem;
-  margin-left: 25px;
   color: ${theme.palette.primary.main};
   &:hover {
     opacity: 0.7;
@@ -176,6 +176,9 @@ const Header = ({value, setValue}) => {
   const theme = useTheme();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
   const matchesBelowXL = useMediaQuery(theme.breakpoints.down('xl'));
+  const matchesBelowHeaderTab = useMediaQuery(
+    theme.breakpoints.down('headerTab')
+  );
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -209,22 +212,27 @@ const Header = ({value, setValue}) => {
 
   const tabs = (
     <>
-      {!matchesBelowXL && (
-        <StyledTabs value={value} onChange={handleChange}>
+      {!matchesBelowHeaderTab && (
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          className={classes.tabs}
+        >
           {tabsNames &&
             tabsNames.map((tabsName, index) => (
-              <StyledTab
+              <Tab
                 label={tabsName}
                 {...a11yProps(index)}
                 key={index}
                 selected={value === index + 1}
                 disableRipple
+                className={classes.tab}
               />
             ))}
-        </StyledTabs>
+        </Tabs>
       )}
 
-      {matchesBelowXL && (
+      {matchesBelowHeaderTab && (
         <MenuItems tabsNames={tabsNames} onChange={handleChangeButtonMenu} />
       )}
 
@@ -238,10 +246,7 @@ const Header = ({value, setValue}) => {
         }}
       />
 
-      <Button
-        variant="contained"
-        className={classes.buttonDownloadHeader}
-      >
+      <Button variant="contained" className={classes.buttonDownloadHeader}>
         Download now
       </Button>
     </>

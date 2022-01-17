@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: 'transparent !important',
     color: theme.palette.primary.main + ' !important',
-    width: '11.5rem',
+    width: '12.5rem',
     textTransform: 'none !important',
     borderRadius: 0,
     '&:hover': {
