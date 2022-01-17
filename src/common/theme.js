@@ -12,6 +12,7 @@ export default createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
+      headerTab: 1660,
       xxl: 2030,
     },
   },

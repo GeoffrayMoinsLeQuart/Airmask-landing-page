@@ -46,6 +46,16 @@ const useStyles = makeStyles((theme) => ({
       width: '52rem !important',
     },
   },
+  gridTextLeft: {
+    [theme.breakpoints.up('md')]: {
+      marginLeft: 'inherit !important',
+    },
+  },
+  gridTextRight: {
+    [theme.breakpoints.up('md')]: {
+      marginRight: 'inherit !important',
+    },
+  },
   elementGridText: {
     paddingTop: '0.5rem',
     paddingBottom: '0.5rem',
@@ -57,7 +67,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CardHowItWorks = ({ title, subTitle, image, illustration }) => {
+const CardHowItWorks = ({
+  title,
+  subTitle,
+  image,
+  illustration,
+  direction,
+}) => {
   const theme = useTheme();
   const classes = useStyles();
   const matchesBelowMD = useMediaQuery(theme.breakpoints.down('md'));
@@ -77,7 +93,10 @@ const CardHowItWorks = ({ title, subTitle, image, illustration }) => {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        className={classes.gridText}
+        className={[
+          classes.gridText,
+          direction === 'right' ? classes.gridTextRight : classes.gridTextLeft,
+        ]}
       >
         <Grid item sm={6}>
           <Lottie options={defaultOptions} />
