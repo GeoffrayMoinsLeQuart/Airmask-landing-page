@@ -87,41 +87,86 @@ const CardHowItWorks = ({
   };
 
   return (
-    <Grid item sm={12} md={6} className={classes.gridContainerBox}>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        className={[
-          classes.gridText,
-          direction === 'right' ? classes.gridTextRight : classes.gridTextLeft,
-        ]}
-      >
-        <Grid item sm={6}>
-          <Lottie options={defaultOptions} />
-          {/* <img alt={image} src={image} className={classes.image} /> */}
-        </Grid>
-        <Grid item sm={2}>
-          <Typography
-            variant={matchesBelowMD ? 'body2' : 'h2'}
-            className={classes.elementGridText}
-            align="center"
+    <>
+      {matchesBelowMD && (
+        <Grid item sm={12} md={6} className={classes.gridContainerBox}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            className={[
+              classes.gridText,
+              direction === 'right'
+                ? classes.gridTextRight
+                : classes.gridTextLeft,
+            ]}
           >
-            {title}
-          </Typography>
+            <Grid item sm={6}>
+              <Lottie options={defaultOptions} />
+              {/* <img alt={image} src={image} className={classes.image} /> */}
+            </Grid>
+            <Grid item sm={2}>
+              <Typography
+                variant={matchesBelowMD ? 'body2' : 'h2'}
+                className={classes.elementGridText}
+                align="center"
+              >
+                {title}
+              </Typography>
+            </Grid>
+            <Grid item sm={2}>
+              <Typography
+                variant={matchesBelowMD ? 'body1' : 'h4'}
+                className={classes.elementGridText}
+                align="center"
+              >
+                {subTitle}
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item sm={2}>
-          <Typography
-            variant={matchesBelowMD ? 'body1' : 'h4'}
-            className={classes.elementGridText}
-            align="center"
-          >
-            {subTitle}
-          </Typography>
+      )}
+      {!matchesBelowMD && (
+        <Grid item sm={12} md={6} className={classes.gridContainerBox}>
+          <Grid container>
+            {direction === 'right' && <Grid item sm={1}></Grid>}
+            <Grid item sm={11}>
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                className={[classes.gridText]}
+              >
+                <Grid item sm={6}>
+                  <Lottie options={defaultOptions} />
+                  {/* <img alt={image} src={image} className={classes.image} /> */}
+                </Grid>
+                <Grid item sm={2}>
+                  <Typography
+                    variant={matchesBelowMD ? 'body2' : 'h2'}
+                    className={classes.elementGridText}
+                    align="center"
+                  >
+                    {title}
+                  </Typography>
+                </Grid>
+                <Grid item sm={2}>
+                  <Typography
+                    variant={matchesBelowMD ? 'body1' : 'h4'}
+                    className={classes.elementGridText}
+                    align="center"
+                  >
+                    {subTitle}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      )}
+    </>
   );
 };
 

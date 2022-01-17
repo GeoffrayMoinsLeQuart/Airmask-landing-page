@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.ternary.opacity3,
     paddingLeft: '2.5rem',
     paddingRight: '1.5rem',
+    paddingTop: '1.5rem',
     borderRadius: '2rem',
   },
 }));

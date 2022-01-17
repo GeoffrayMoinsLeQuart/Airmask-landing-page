@@ -63,15 +63,12 @@ const useStyles = makeStyles((theme) => ({
       position: 'absolute',
       right: 0,
     },
-    [theme.breakpoints.down('xl')]: {
-      maxWidth: '30rem !important',
-    },
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
-    [theme.breakpoints.up('xxl')]: {
-      maxWidth: '50rem !important',
-    },
+    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up('lg')]: { maxHeight: '43.75rem !important', maxWidth: '40rem !important' },
+    [theme.breakpoints.up('xxl')]: {},
   },
   title: {
     [theme.breakpoints.down('sm')]: {
@@ -156,7 +153,8 @@ const AirmaskInNumber = ({ value }) => {
         ref={myRef}
         container
         direction="row"
-        justifyContent="space-between"
+        justifyContent="space-around"
+        alignItems="center"
         className={classes.mainGrid}
       >
         {matchesBelowMD &&
