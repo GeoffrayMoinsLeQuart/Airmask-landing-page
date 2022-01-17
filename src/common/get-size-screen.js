@@ -44,9 +44,9 @@ export default function useIsMobile(page) {
     if (isXSScreen && !isSMScreen) {
       return -400;
     } else if (isSMScreen && !isMDScreen) {
-      return -250;
+      return -350;
     } else if (isMDScreen && !isLGScreen) {
-      return -360;
+      return -400;
     } else if (isLGScreen && !isXLGScreen) {
       return -400;
     } else if (isXLGScreen && !isXXLGScreen) {
